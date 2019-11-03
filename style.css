@@ -10,17 +10,17 @@ html {
     font-size: 62.5%;
 }
 
+/* CYKLER I LISTE VISNING */
 .bikes {
     display: grid;
     grid-template-columns: 1fr;
-    width: 100vw;
-    max-width: 1000px;
+    grid-gap: 20px;
+    width: 90vw;
     margin: 0 auto;
 }
 
 .bike {
     width: 100%;
-    padding: 20px;
     cursor: pointer;
 }
 
@@ -41,8 +41,40 @@ html {
     margin: 5px 0;
 }
 
+/* CYKLER I SINGLE VIEW */
+.single_bike {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.s_bike_img {
+    width: 100%;
+}
+
+.s_model {
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+.lang {
+    font-size: 1.6rem;
+    font-family: sans-serif;
+}
+
+.s_pris {
+    font-size: 1.6rem;
+    font-family: sans-serif;
+}
+
 @media screen and (min-width: 850px) {
     .bikes {
         grid-template-columns: 1fr 1fr;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .single_bike {
+        max-width: 1000px;
+        margin: 0 auto;
     }
 }
