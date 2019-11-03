@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.bikes {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100vw;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bike {
+    width: 100%;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.bike_img {
+    width: 100%;
+}
+
+.model {
+    font-size: 2rem;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.kort,
+.pris {
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    margin: 5px 0;
+}
+
+@media screen and (min-width: 850px) {
+    .bikes {
+        grid-template-columns: 1fr 1fr;
+    }
+}
