@@ -16,14 +16,31 @@
             <h2 class="s_model"></h2>
             <p class="lang"></p>
             <p class="s_pris"></p>
+
+            <div class="tab">
+                <button class="tablinks tab_selected" id="beskrivelse_tab">Beskrivelse</button>
+                <button class="tablinks tab_closed" id="specifkationer_tab">Specifikationer</button>
+                <button class="tablinks tab_closed" id="anmeldelser_tab">Anmeldelser</button>
+            </div>
+
+            <div id="beskrivelse" class="tabcontent">
+                <h3>Beskrivelse</h3>
+            </div>
+
+            <div id="specifikationer" class="tabcontent">
+                <h3>Specifikationer</h3>
+            </div>
+
+            <div id="anmeldelser" class="tabcontent">
+                <h3>Anmeldelser</h3>
+            </div>
+
         </section>
     </main>
     <script>
         //Søger i adresselinjen efter ordet "id" og sætter konstanten id lig med
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
-
-
 
         console.log(id);
 
@@ -33,6 +50,9 @@
 
         function start() {
             getJson();
+            document.querySelector("#beskrivelse_tab").addEventListener("click", openTab1);
+            document.querySelector("#specifkationer_tab").addEventListener("click", openTab2);
+            document.querySelector("#anmeldelser_tab").addEventListener("click", openTab3);
         }
 
         async function getJson() {
@@ -49,14 +69,63 @@
         }
 
         function showBike() {
-            document.querySelector("title").textContent = "E-bikes | " + bike.title.rendered;
+            document.querySelector("title").textContent = bike.kategorier + " | " + bike.title.rendered;
             document.querySelector('meta[name="description"]').setAttribute("content", bike.meta_description);
 
             document.querySelector(".s_bike_img").src = bike.billede.guid;
+            document.querySelector(".s_bike_img").alt = bike.alt_tag;
             document.querySelector(".s_model").textContent = "KOGA " + bike.model;
             document.querySelector(".lang").textContent = bike.lang;
             document.querySelector(".s_pris").textContent = "Pris: " + bike.pris + " DKK";
+        }
 
+
+        function openTab1() {
+            console.log("openTab1");
+
+            document.querySelector("#beskrivelse_tab").classList.remove("tab_closed");
+            document.querySelector("#beskrivelse_tab").classList.add("tab_selected");
+            document.querySelector("#beskrivelse").style.display = "block";
+
+            document.querySelector("#specifkationer_tab").classList.remove("tab_selected");
+            document.querySelector("#specifkationer_tab").classList.add("tab_closed");
+            document.querySelector("#specifikationer").style.display = "none";
+
+            document.querySelector("#anmeldelser_tab").classList.remove("tab_selected");
+            document.querySelector("#anmeldelser_tab").classList.add("tab_closed");
+            document.querySelector("#anmeldelser").style.display = "none";
+        }
+
+        function openTab2() {
+            console.log("openTab2");
+
+            document.querySelector("#beskrivelse_tab").classList.remove("tab_selected");
+            document.querySelector("#beskrivelse_tab").classList.add("tab_closed");
+            document.querySelector("#beskrivelse").style.display = "none";
+
+            document.querySelector("#specifkationer_tab").classList.remove("tab_closed");
+            document.querySelector("#specifkationer_tab").classList.add("tab_selected");
+            document.querySelector("#specifikationer").style.display = "block";
+
+            document.querySelector("#anmeldelser_tab").classList.remove("tab_selected");
+            document.querySelector("#anmeldelser_tab").classList.add("tab_closed");
+            document.querySelector("#anmeldelser").style.display = "none";
+        }
+
+        function openTab3() {
+            console.log("openTab3");
+
+            document.querySelector("#beskrivelse_tab").classList.remove("tab_selected");
+            document.querySelector("#beskrivelse_tab").classList.add("tab_closed");
+            document.querySelector("#beskrivelse").style.display = "none";
+
+            document.querySelector("#specifkationer_tab").classList.remove("tab_selected");
+            document.querySelector("#specifkationer_tab").classList.add("tab_closed");
+            document.querySelector("#specifikationer").style.display = "none";
+
+            document.querySelector("#anmeldelser_tab").classList.remove("tab_closed");
+            document.querySelector("#anmeldelser_tab").classList.add("tab_selected");
+            document.querySelector("#anmeldelser").style.display = "block";
         }
 
     </script>

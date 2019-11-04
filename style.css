@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    --koga-blue: #0E7DC7;
 }
 
 body {
@@ -64,6 +65,53 @@ html {
 .s_pris {
     font-size: 1.6rem;
     font-family: sans-serif;
+}
+
+/* TABS */
+.tab {
+    overflow: hidden;
+    background-color: white;
+    width: 380px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    background-color: var(--koga-blue);
+}
+
+#beskrivelse {
+    display: block;
+}
+
+h3 {
+    font-size: 2rem;
+    font-family: sans-serif;
+    color: white;
+}
+
+.tab_selected {
+    background-color: var(--koga-blue);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+}
+
+.tab_closed {
+    border: none;
+    outline: none;
 }
 
 @media screen and (min-width: 850px) {

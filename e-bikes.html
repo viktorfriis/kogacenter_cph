@@ -60,6 +60,7 @@
                     const klon = temp.cloneNode(true).content;
 
                     klon.querySelector(".bike_img").src = bike.billede.guid;
+                    klon.querySelector(".bike_img").alt = bike.alt_tag;
                     klon.querySelector(".model").textContent = bike.model;
                     klon.querySelector(".kort").textContent = bike.kort;
                     klon.querySelector(".pris").textContent = bike.pris + " DKK";
