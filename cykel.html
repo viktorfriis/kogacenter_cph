@@ -13,28 +13,33 @@
     <main>
         <section class="single_bike">
             <img class="s_bike_img" src="" alt="">
-            <h2 class="s_model"></h2>
-            <p class="lang"></p>
-            <p class="s_pris"></p>
+            <section class="info">
+                <h1 class="s_model"></h1>
+                <p class="s_color"></p>
+                <p class="s_weight"></p>
+                <p class="s_pris"></p>
+            </section>
+            <section class="details">
+                <div class="tab">
+                    <button class="tablinks tab_selected" id="desc_tab">Beskrivelse</button>
+                    <button class="tablinks tab_closed" id="spec_tab">Specifikationer</button>
+                    <button class="tablinks tab_closed" id="rev_tab">Anmeldelser</button>
+                </div>
 
-            <div class="tab">
-                <button class="tablinks tab_selected" id="beskrivelse_tab">Beskrivelse</button>
-                <button class="tablinks tab_closed" id="specifkationer_tab">Specifikationer</button>
-                <button class="tablinks tab_closed" id="anmeldelser_tab">Anmeldelser</button>
-            </div>
+                <div id="desc" class="tabcontent">
+                    <h2></h2>
+                    <p></p>
+                </div>
 
-            <div id="beskrivelse" class="tabcontent">
-                <h3>Beskrivelse</h3>
-            </div>
+                <div id="specs" class="tabcontent">
+                    <h2></h2>
+                    <p></p>
+                </div>
 
-            <div id="specifikationer" class="tabcontent">
-                <h3>Specifikationer</h3>
-            </div>
-
-            <div id="anmeldelser" class="tabcontent">
-                <h3>Anmeldelser</h3>
-            </div>
-
+                <div id="rev" class="tabcontent">
+                    <h2>Ingen anmeldelser fundet.</h2>
+                </div>
+            </section>
         </section>
     </main>
     <script>
@@ -50,9 +55,9 @@
 
         function start() {
             getJson();
-            document.querySelector("#beskrivelse_tab").addEventListener("click", openTab1);
-            document.querySelector("#specifkationer_tab").addEventListener("click", openTab2);
-            document.querySelector("#anmeldelser_tab").addEventListener("click", openTab3);
+            document.querySelector("#desc_tab").addEventListener("click", openDesc);
+            document.querySelector("#spec_tab").addEventListener("click", openSpecs);
+            document.querySelector("#rev_tab").addEventListener("click", openRev);
         }
 
         async function getJson() {
@@ -75,57 +80,59 @@
             document.querySelector(".s_bike_img").src = bike.billede.guid;
             document.querySelector(".s_bike_img").alt = bike.alt_tag;
             document.querySelector(".s_model").textContent = "KOGA " + bike.model;
-            document.querySelector(".lang").textContent = bike.lang;
+            document.querySelector(".s_color").textContent = "Farve: " + bike.farve;
+            document.querySelector(".s_weight").textContent = "Vægt: " + bike.weight;
+            document.querySelector("#desc p").textContent = bike.lang;
             document.querySelector(".s_pris").textContent = "Pris: " + bike.pris + " DKK";
         }
 
 
-        function openTab1() {
-            console.log("openTab1");
+        function openDesc() {
+            console.log("openDesc");
 
-            document.querySelector("#beskrivelse_tab").classList.remove("tab_closed");
-            document.querySelector("#beskrivelse_tab").classList.add("tab_selected");
-            document.querySelector("#beskrivelse").style.display = "block";
+            document.querySelector("#desc_tab").classList.remove("tab_closed");
+            document.querySelector("#desc_tab").classList.add("tab_selected");
+            document.querySelector("#desc").style.display = "block";
 
-            document.querySelector("#specifkationer_tab").classList.remove("tab_selected");
-            document.querySelector("#specifkationer_tab").classList.add("tab_closed");
-            document.querySelector("#specifikationer").style.display = "none";
+            document.querySelector("#spec_tab").classList.remove("tab_selected");
+            document.querySelector("#spec_tab").classList.add("tab_closed");
+            document.querySelector("#specs").style.display = "none";
 
-            document.querySelector("#anmeldelser_tab").classList.remove("tab_selected");
-            document.querySelector("#anmeldelser_tab").classList.add("tab_closed");
-            document.querySelector("#anmeldelser").style.display = "none";
+            document.querySelector("#rev_tab").classList.remove("tab_selected");
+            document.querySelector("#rev_tab").classList.add("tab_closed");
+            document.querySelector("#rev").style.display = "none";
         }
 
-        function openTab2() {
-            console.log("openTab2");
+        function openSpecs() {
+            console.log("openSpecs");
 
-            document.querySelector("#beskrivelse_tab").classList.remove("tab_selected");
-            document.querySelector("#beskrivelse_tab").classList.add("tab_closed");
-            document.querySelector("#beskrivelse").style.display = "none";
+            document.querySelector("#desc_tab").classList.remove("tab_selected");
+            document.querySelector("#desc_tab").classList.add("tab_closed");
+            document.querySelector("#desc").style.display = "none";
 
-            document.querySelector("#specifkationer_tab").classList.remove("tab_closed");
-            document.querySelector("#specifkationer_tab").classList.add("tab_selected");
-            document.querySelector("#specifikationer").style.display = "block";
+            document.querySelector("#spec_tab").classList.remove("tab_closed");
+            document.querySelector("#spec_tab").classList.add("tab_selected");
+            document.querySelector("#specs").style.display = "block";
 
-            document.querySelector("#anmeldelser_tab").classList.remove("tab_selected");
-            document.querySelector("#anmeldelser_tab").classList.add("tab_closed");
-            document.querySelector("#anmeldelser").style.display = "none";
+            document.querySelector("#rev_tab").classList.remove("tab_selected");
+            document.querySelector("#rev_tab").classList.add("tab_closed");
+            document.querySelector("#rev").style.display = "none";
         }
 
-        function openTab3() {
-            console.log("openTab3");
+        function openRev() {
+            console.log("openRev");
 
-            document.querySelector("#beskrivelse_tab").classList.remove("tab_selected");
-            document.querySelector("#beskrivelse_tab").classList.add("tab_closed");
-            document.querySelector("#beskrivelse").style.display = "none";
+            document.querySelector("#desc_tab").classList.remove("tab_selected");
+            document.querySelector("#desc_tab").classList.add("tab_closed");
+            document.querySelector("#desc").style.display = "none";
 
-            document.querySelector("#specifkationer_tab").classList.remove("tab_selected");
-            document.querySelector("#specifkationer_tab").classList.add("tab_closed");
-            document.querySelector("#specifikationer").style.display = "none";
+            document.querySelector("#spec_tab").classList.remove("tab_selected");
+            document.querySelector("#spec_tab").classList.add("tab_closed");
+            document.querySelector("#specs").style.display = "none";
 
-            document.querySelector("#anmeldelser_tab").classList.remove("tab_closed");
-            document.querySelector("#anmeldelser_tab").classList.add("tab_selected");
-            document.querySelector("#anmeldelser").style.display = "block";
+            document.querySelector("#rev_tab").classList.remove("tab_closed");
+            document.querySelector("#rev_tab").classList.add("tab_selected");
+            document.querySelector("#rev").style.display = "block";
         }
 
     </script>

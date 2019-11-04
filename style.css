@@ -11,6 +11,34 @@ html {
     font-size: 62.5%;
 }
 
+h1 {
+    font-size: 3rem;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+h3 {}
+
+p {
+    font-size: 1.6rem;
+    font-family: sans-serif;
+}
+
+.details p,
+h2 {
+    color: white;
+}
+
+.details h2 {
+    font-size: 1.6rem;
+}
+
 /* CYKLER I LISTE VISNING */
 .bikes {
     display: grid;
@@ -29,16 +57,8 @@ html {
     width: 100%;
 }
 
-.model {
-    font-size: 2rem;
-    font-family: sans-serif;
-    margin-bottom: 10px;
-}
-
 .kort,
 .pris {
-    font-size: 1.6rem;
-    font-family: sans-serif;
     margin: 5px 0;
 }
 
@@ -52,26 +72,11 @@ html {
     width: 100%;
 }
 
-.s_model {
-    font-size: 2rem;
-    font-family: sans-serif;
-}
-
-.lang {
-    font-size: 1.6rem;
-    font-family: sans-serif;
-}
-
-.s_pris {
-    font-size: 1.6rem;
-    font-family: sans-serif;
-}
-
 /* TABS */
 .tab {
     overflow: hidden;
     background-color: white;
-    width: 380px;
+    width: 420px;
 }
 
 /* Style the buttons inside the tab */
@@ -82,7 +87,8 @@ html {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 /* Style the tab content */
@@ -92,14 +98,8 @@ html {
     background-color: var(--koga-blue);
 }
 
-#beskrivelse {
+#desc {
     display: block;
-}
-
-h3 {
-    font-size: 2rem;
-    font-family: sans-serif;
-    color: white;
 }
 
 .tab_selected {
@@ -124,5 +124,11 @@ h3 {
     .single_bike {
         max-width: 1000px;
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .details {
+        grid-column: 1/3;
     }
 }
