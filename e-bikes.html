@@ -54,9 +54,10 @@
         }
 
         function showBikes() {
+            console.log("SHOWBIKES");
             //For hvert array objekt skriver jeg dataen ind i en template
             bikes.forEach(bike => {
-                if (bike.kategorier == "E-bike") {
+                if (bike.kategori == "E-bike") {
                     const klon = temp.cloneNode(true).content;
 
                     klon.querySelector(".bike_img").src = bike.billede.guid;
