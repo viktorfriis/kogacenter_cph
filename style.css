@@ -33,10 +33,22 @@ p {
 .details p,
 h2 {
     color: white;
+    line-height: 1.4;
 }
 
 .details h2 {
     font-size: 1.6rem;
+}
+
+#specs ul li {
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    color: white;
+    line-height: 1.6;
+}
+
+#specs ul {
+    padding-left: 20px;
 }
 
 /* CYKLER I LISTE VISNING */
@@ -55,6 +67,10 @@ h2 {
 
 .bike_img {
     width: 100%;
+}
+
+.model {
+    color: black;
 }
 
 .kort,
@@ -96,6 +112,7 @@ h2 {
     display: none;
     padding: 6px 12px;
     background-color: var(--koga-blue);
+    margin-bottom: 30px;
 }
 
 #desc {
@@ -130,5 +147,9 @@ h2 {
 
     .details {
         grid-column: 1/3;
+    }
+
+    .s_model {
+        margin-top: 50px;
     }
 }

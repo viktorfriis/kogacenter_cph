@@ -29,11 +29,19 @@
                 <div id="desc" class="tabcontent">
                     <h2></h2>
                     <p></p>
+                    <p></p>
+                    <p></p>
                 </div>
 
                 <div id="specs" class="tabcontent">
-                    <h2></h2>
-                    <p></p>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
                 </div>
 
                 <div id="rev" class="tabcontent">
@@ -74,7 +82,7 @@
         }
 
         function showBike() {
-            document.querySelector("title").textContent = bike.kategorier + " | " + bike.title.rendered;
+            document.querySelector("title").textContent = "Kogacenter | " + bike.kategori + " | " + bike.title.rendered;
             document.querySelector('meta[name="description"]').setAttribute("content", bike.meta_description);
 
             document.querySelector(".s_bike_img").src = bike.billede.guid;
@@ -82,8 +90,18 @@
             document.querySelector(".s_model").textContent = "KOGA " + bike.model;
             document.querySelector(".s_color").textContent = "Farve: " + bike.farve;
             document.querySelector(".s_weight").textContent = "Vægt: " + bike.weight;
-            document.querySelector("#desc p").textContent = bike.lang;
             document.querySelector(".s_pris").textContent = "Pris: " + bike.pris + " DKK";
+
+            document.querySelector("#desc p").textContent = bike.lang_1;
+            document.querySelector("#desc p+p").textContent = bike.lang_2;
+            document.querySelector("#desc p+p+p").textContent = bike.lang_3;
+
+            document.querySelector("#specs ul li").textContent = bike.spec_1;
+            document.querySelector("#specs ul li+li").textContent = bike.spec_2;
+            document.querySelector("#specs ul li+li+li").textContent = bike.spec_3;
+            document.querySelector("#specs ul li+li+li+li").textContent = bike.spec_4;
+            document.querySelector("#specs ul li+li+li+li+li").textContent = bike.spec_5;
+            document.querySelector("#specs ul li+li+li+li+li+li").textContent = bike.spec_6;
         }
 
 
