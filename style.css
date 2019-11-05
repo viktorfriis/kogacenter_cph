@@ -9,6 +9,7 @@ body {
 
 html {
     font-size: 62.5%;
+
 }
 
 h1 {
@@ -67,6 +68,7 @@ figure {
     width: 100vw;
     height: 100px;
     background-color: var(--koga-blue);
+
 }
 
 #logo {
@@ -91,7 +93,7 @@ header #logo img {
 }
 
 nav {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: var(--koga-blue);
     transition: all 0.5s ease-in-out;
@@ -102,6 +104,11 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Den klasse der åbner burgermenuen */
+.toggle_menu {
+    transform: translateX(100%);
 }
 
 #burger_knap {
@@ -170,10 +177,7 @@ nav {
     left: 50%;
 }
 
-/* Den klasse der åbner burgermenuen */
-.toggle_menu {
-    transform: translateX(100%);
-}
+
 
 /* To klasser der sørger for at burger knappen forbliver på skærmen når den åbnes */
 .pos_absolute {
@@ -349,7 +353,7 @@ h2 {
     position: relative;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
-    margin-left: 30px;
+    padding: 30px 0px 30px 70px;
 }
 
 footer h2 {
@@ -480,5 +484,7 @@ footer p {
         grid-template-columns: repeat(5, auto);
         max-width: 1200px;
         margin: 0 auto;
+        justify-items: center;
+        padding: 30px;
     }
 }

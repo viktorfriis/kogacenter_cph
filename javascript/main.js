@@ -8,12 +8,22 @@ function start() {
 async function hentHeader() {
     console.log("header");
 
-    const theHeader = await fetch("header.html");
+    const theHeader = await fetch("/header.html");
     let theFetched = await theHeader.text();
     document.querySelector("header").innerHTML = theFetched;
 
     console.log("header hentet");
     burgerAktiv();
+}
+
+async function hentFooter() {
+    console.log("footer");
+
+    const theFooter = await fetch("/footer.html");
+    let theFetched = await theFooter.text();
+    document.querySelector("footer").innerHTML = theFetched;
+
+    console.log("footer hentet");
 }
 
 function burgerAktiv() {
@@ -30,14 +40,4 @@ function burgerAktiv() {
 
         menu.classList.toggle("toggle_menu"); //Selve menuen toggler klassen .toggle_menu, som åbner og lukker menuen
     })
-}
-
-async function hentFooter() {
-    console.log("footer");
-
-    const theFooter = await fetch("footer.html");
-    let theFetched = await theFooter.text();
-    document.querySelector("footer").innerHTML = theFetched;
-
-    console.log("footer hentet");
 }

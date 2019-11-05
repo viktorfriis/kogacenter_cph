@@ -37,7 +37,7 @@
 
               klon.querySelector(".bike_img").src = bike.billede.guid;
               klon.querySelector(".bike_img").alt = bike.alt_tag;
-              klon.querySelector(".model").textContent = bike.model;
+              klon.querySelector(".model").textContent = bike.model_navn;
               klon.querySelector(".kort").textContent = bike.kort;
               klon.querySelector(".pris").textContent = bike.pris + " DKK";
 
