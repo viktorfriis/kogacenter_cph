@@ -19,11 +19,13 @@
                 <p class="s_weight"></p>
                 <p class="s_pris"></p>
             </section>
+
+
             <section class="details">
                 <div class="tab">
-                    <button class="tab_selected" data-detail="desc" id="desc_tab">Beskrivelse</button>
-                    <button class="tab_closed" data-detail="specs" id="spec_tab">Specifikationer</button>
-                    <button class="tab_closed" data-detail="rev" id="rev_tab">Anmeldelser (0)</button>
+                    <button class="tab_selected" data-detail="#desc" id="desc_tab">Beskrivelse</button>
+                    <button class="tab_closed" data-detail="#specs" id="spec_tab">Specifikationer</button>
+                    <button class="tab_closed" data-detail="#rev" id="rev_tab">Anmeldelser (0)</button>
                 </div>
 
                 <div id="desc" class="tabcontent">
@@ -132,10 +134,9 @@
             specs.style.display = "none";
             rev.style.display = "none";
 
-            document.querySelector("#" + detail).style.display = "block";
+            console.log(detail);
+
+            document.querySelector(detail).style.display = "block";
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
