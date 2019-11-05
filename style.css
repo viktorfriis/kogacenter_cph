@@ -63,12 +63,13 @@ p {
     align-items: center;
     height: 150px;
     width: 200px;
+    margin-left: 30px;
 }
 
 #logo h1,
 a {
     text-align: left;
-    margin-left: 10px;
+
     font-size: 1.8rem;
     text-decoration: none;
     color: white;
@@ -82,7 +83,6 @@ nav {
     width: 100vw;
     height: 100vh;
     background-color: var(--koga-blue);
-    opacity: 0.9;
     transition: all 0.5s ease-in-out;
     position: fixed;
     bottom: 0;
@@ -91,24 +91,23 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 #burger_knap {
-    width: 75px;
-    height: 75px;
+    width: 48px;
+    height: 36px;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
     z-index: 120;
-    right: 0;
+    right: 30px;
 }
 
 #burger_knap div {
     display: block;
     position: absolute;
     height: 6px;
-    width: 50px;
+    width: 100%;
     background-color: white;
     border-radius: 2px;
     opacity: 1;
@@ -118,20 +117,20 @@ nav {
 }
 
 #burger_knap div:nth-child(1) {
-    top: 20px;
-    left: 12px;
+    top: 0px;
+    left: 0px;
 }
 
 /* Der ligger to div'er oveni hinanden, for at animationen når man klikker på den ser naturlig ud */
 #burger_knap div:nth-child(2),
 #burger_knap div:nth-child(3) {
-    top: 33.5px;
-    left: 12px;
+    top: 15px;
+    left: 0px;
 }
 
 #burger_knap div:nth-child(4) {
-    top: 47px;
-    left: 12px;
+    bottom: 0px;
+    left: 0px;
 }
 
 /* Når #burger_knap får klassen .open ved hjælp af JavaScript, bliver div nr. 1 usynlig */
@@ -170,25 +169,51 @@ nav {
     position: absolute;
 }
 
-.menu_links {
-    margin: 0;
-    padding: 0;
+.navigation {
     list-style: none;
-    line-height: 1.5;
+    margin: 0;
+    padding-left: 0;
     display: flex;
     flex-direction: column;
 }
 
-.menu_links a {
-    margin-bottom: 40px;
-    font-family: interstate-condensed, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    color: white;
-    font-size: 2.5rem;
+#menu li {
+    display: block;
+    float: left;
+    padding: 2rem;
+    position: relative;
     text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+#menu li a {
     color: white;
-    text-align: center;
+    font-family: sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+#menu li:hover {
+    cursor: pointer;
+}
+
+.dropdown {
+    min-width: 5rem;
+    position: absolute;
+    visibility: hidden;
+    margin-top: 1rem;
+    left: 0;
+    z-index: 130;
+}
+
+#menu ul li ul li {
+    width: 100%;
+    z-index: 130;
+}
+
+.drop_btn:hover > .dropdown {
+    position: relative;
+    visibility: visible;
 }
 
 .top_header p {
@@ -338,7 +363,6 @@ footer p {
         justify-content: flex-end;
         align-items: flex-end;
         align-self: flex-end;
-        margin-bottom: 10px;
     }
 
     #burger_knap {
@@ -346,26 +370,68 @@ footer p {
         display: none;
     }
 
-    .menu_links {
-        /* Ændrer flex-direction og sørger for at "skubbe" indholdet til højre */
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-
-    .menu_links a {
-        font-size: 2rem;
-        margin-bottom: 0;
-        margin-left: 30px;
-    }
-
-    .menu_links a:last-child {
-        margin-right: 30px;
-    }
-
     .toggle_menu {
         /* Sørger for at menuen er synlig hele tiden */
         transform: translateX(0);
     }
+
+
+    .navigation {
+        list-style: none;
+        margin: 0 30px 0 0;
+        padding-left: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #menu li {
+        display: block;
+        float: left;
+        padding: 2rem;
+        position: relative;
+        text-decoration: none;
+        transition-duration: 0.5s;
+    }
+
+    #menu li a {
+        color: white;
+        font-family: sans-serif;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+
+    #menu li:hover {
+        cursor: pointer;
+    }
+
+    #menu li a:hover {
+        color: #c1e5fd;
+    }
+
+    .dropdown {
+        width: 220px;
+        position: absolute;
+        visibility: hidden;
+        margin-top: 20px;
+        left: 0;
+        z-index: 130;
+        background-color: var(--koga-blue);
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    #menu ul li ul li {
+        width: 100%;
+        z-index: 130;
+
+    }
+
+    .drop_btn:hover > .dropdown {
+        position: absolute;
+        visibility: visible;
+    }
+
 
     .bikes {
         grid-template-columns: 1fr 1fr;
