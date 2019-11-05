@@ -304,7 +304,13 @@ h2 {
 
 /*FOOTER*/
 
-footer {
+.googlemaps iframe {
+    width: 100vw;
+    height: 30vh;
+    margin-top: 5rem;
+}
+
+.footer_wrapper {
     display: grid;
     background-color: white;
     width: 100vw;
@@ -323,10 +329,6 @@ footer h2 {
 footer p {
     color: var(--koga-blue);
     font-size: 1.2rem;
-}
-
-.om {
-    width: 100px;
 }
 
 /*FOOTER SLUT*/
@@ -390,7 +392,7 @@ footer p {
         margin-top: 50px;
     }
 
-    footer {
+    .footer_wrapper {
         grid-template-columns: repeat(5, auto);
         max-width: 1200px;
         margin: 0 auto;
