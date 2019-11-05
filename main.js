@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", start);
 
 function start() {
     hentHeader();
+    hentFooter();
 }
 
 async function hentHeader() {
@@ -29,4 +30,14 @@ function burgerAktiv() {
 
         menu.classList.toggle("toggle_menu"); //Selve menuen toggler klassen .toggle_menu, som åbner og lukker menuen
     })
+}
+
+async function hentFooter() {
+    console.log("footer");
+
+    const theFooter = await fetch("footer.html");
+    let theFetched = await theFooter.text();
+    document.querySelector("footer").innerHTML = theFetched;
+
+    console.log("footer hentet");
 }
