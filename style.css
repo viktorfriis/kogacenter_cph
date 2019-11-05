@@ -302,6 +302,35 @@ h2 {
     outline: none;
 }
 
+/*FOOTER*/
+
+footer {
+    display: grid;
+    background-color: white;
+    width: 100vw;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    margin-left: 30px;
+}
+
+footer h2 {
+    color: var(--koga-blue);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+footer p {
+    color: var(--koga-blue);
+    font-size: 1.2rem;
+}
+
+.om {
+    width: 100px;
+}
+
+/*FOOTER SLUT*/
+
 @media screen and (min-width: 850px) {
 
     /* NAVIGATION */
@@ -359,5 +388,11 @@ h2 {
 
     .s_model {
         margin-top: 50px;
+    }
+
+    footer {
+        grid-template-columns: repeat(5, auto);
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }
