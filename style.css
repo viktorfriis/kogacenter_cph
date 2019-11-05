@@ -7,6 +7,10 @@ body {
     margin: 0;
 }
 
+img {
+    width: 100%;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -22,6 +26,10 @@ h2 {
     font-family: sans-serif;
     margin-bottom: 10px;
 }
+
+/*FORSIDE*/
+
+#cykelbaggrund {}
 
 h3 {}
 
