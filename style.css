@@ -80,8 +80,9 @@ header #logo img {
 
 nav {
     width: 100vw;
-    height: calc(100vh - 40px);
+    height: 100vh;
     background-color: var(--koga-blue);
+    opacity: 0.9;
     transition: all 0.5s ease-in-out;
     position: fixed;
     bottom: 0;
@@ -190,16 +191,11 @@ nav {
     text-align: center;
 }
 
-
-
 .top_header p {
     color: white;
     font-size: 1.2rem;
     margin: 0 30px 0 0;
 }
-
-
-
 
 .details p,
 h2 {
