@@ -7,10 +7,6 @@ body {
     margin: 0;
 }
 
-#splash img {
-    width: 100%;
-}
-
 html {
     font-size: 62.5%;
 }
@@ -27,15 +23,30 @@ h2 {
     margin-bottom: 10px;
 }
 
-/*FORSIDE*/
-
-#cykelbaggrund {}
-
 h3 {}
 
 p {
     font-size: 1.6rem;
     font-family: sans-serif;
+}
+
+figure {
+    margin: 0;
+}
+
+/*FORSIDE*/
+#baggrund img {
+    width: 100%;
+}
+
+#txt_logo img {
+    width: 250px;
+}
+
+#txt_logo {
+    position: absolute;
+    top: 180px;
+    left: 30px;
 }
 
 /* HEADER */
@@ -430,6 +441,17 @@ footer p {
     .drop_btn:hover > .dropdown {
         position: absolute;
         visibility: visible;
+    }
+
+    /* FORSIDE */
+    #txt_logo img {
+        width: 450px;
+    }
+
+    #txt_logo {
+        position: absolute;
+        top: 200px;
+        left: 50px;
     }
 
 
