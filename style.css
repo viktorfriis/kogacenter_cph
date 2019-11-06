@@ -444,6 +444,17 @@ textarea {
     outline: none;
 }
 
+/*OM OS*/
+
+#omos h2 {
+    font-size: 2rem;
+    font-family: 'Oswald';
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: black;
+}
+
 /*FOOTER*/
 
 .googlemaps iframe {
