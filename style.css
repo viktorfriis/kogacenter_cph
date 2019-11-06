@@ -4,6 +4,11 @@
     scroll-behavior: smooth;
 }
 
+#anchor {
+    position: absolute;
+    transform: translateY(-50px);
+}
+
 body {
     margin: 0;
 }
