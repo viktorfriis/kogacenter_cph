@@ -646,6 +646,22 @@ footer p {
 
     }
 
+    #why {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    #why h1 {
+        grid-column: 1/4;
+    }
+
+    #why hr {
+        grid-column: 1/4;
+        width: 50%;
+        height: 2px;
+    }
 
     .bikes {
         grid-template-columns: 1fr 1fr;
