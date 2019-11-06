@@ -91,7 +91,7 @@ button h3 {
 
 #txt_logo {
     position: absolute;
-    top: 270px;
+    top: 150px;
     left: 30px;
 }
 
@@ -114,6 +114,10 @@ button h3 {
     background-color: var(--koga-blue);
     border: none;
     margin-bottom: 20px;
+}
+
+#pop article.bike:hover {
+    transform: scale(1.05);
 }
 
 #why {
@@ -193,6 +197,7 @@ button h3 {
 
 article.bike {
     transition: 0.5s all;
+    text-align: left;
 }
 
 #quote {
@@ -729,7 +734,7 @@ footer p {
 
     #txt_logo {
         position: absolute;
-        top: 300px;
+        top: 200px;
         left: 50px;
     }
 
@@ -738,9 +743,8 @@ footer p {
         grid-template-columns: 1fr 1fr 1fr;
         max-width: 1000px;
         margin: 0 auto;
+        grid-gap: 20px;
     }
-
-
 
     #pop img {
         height: 200px;
@@ -754,11 +758,6 @@ footer p {
         grid-column: 1/4;
         width: 50%;
         height: 2px;
-    }
-
-    #pop article.bike:hover {
-        transform: scale(1.1);
-
     }
 
     #why figcaption {
