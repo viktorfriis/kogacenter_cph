@@ -20,21 +20,32 @@
                 <h1 class="s_model"></h1>
                 <p class="s_color"></p>
                 <p class="s_weight"></p>
-                <p class="s_pris"></p>
+                <h3 class="s_pris"></h3>
+                <button class="cta">
+                    <a class="book_link" href="">
+                        <h3>Book prøvetur her</h3>
+                    </a>
+                </button>
             </section>
 
 
             <section class="details">
                 <div class="tab">
-                    <button class="tab_selected" data-detail="#desc" id="desc_tab">Beskrivelse</button>
-                    <button class="tab_closed" data-detail="#specs" id="spec_tab">Specifikationer</button>
-                    <button class="tab_closed" data-detail="#rev" id="rev_tab">Anmeldelser (0)</button>
+                    <button class="tab_selected" data-detail="#desc" id="desc_tab">
+                        <h3>Beskrivelse</h3>
+                    </button>
+                    <button class="tab_closed" data-detail="#specs" id="spec_tab">
+                        <h3>Specifikationer</h3>
+                    </button>
+                    <button class="tab_closed" data-detail="#rev" id="rev_tab">
+                        <h3>Anmeldelser (0)</h3>
+                    </button>
                 </div>
 
                 <div id="desc" class="tabcontent">
                     <h2></h2>
                     <p></p>
-                    <p></p>
+                    <p id="anchor"></p>
                     <p></p>
                 </div>
 
@@ -53,9 +64,41 @@
                     <h2>Ingen anmeldelser fundet.</h2>
                 </div>
             </section>
+            <section id="book">
+                <h2>Book en prøvetur her</h2>
+                <p>Skriv dine detaljer nedenfor, og send en mail afsted.</p>
+
+
+
+                <form action="mailto:viktorfriiskjeldal@gmail.com" method="post" enctype="text/plain">
+
+                    <input type="checkbox" disabled="disabled" checked="checked" name="check" id="checkbox">
+                    <p class="check_name"></p>
+                    <label for="navn">
+                        <h3>Navn</h3>
+                    </label>
+                    <input type="text" id="fname" name="navn" placeholder="Navn">
+
+                    <label for="email">
+                        <h3>E-mail</h3>
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="E-mail">
+
+                    <label for="phone">
+                        <h3>Telefonnr.</h3>
+                    </label>
+                    <input type="number" id="phone" name="phone" placeholder="Telefonnr.">
+
+                    <input type="submit" value="Book tur">
+                </form>
+            </section>
+
         </section>
+
     </main>
     <footer></footer>
     <script src="/javascript/single.js"></script>
     <script src="/javascript/main.js"></script>
-</body></html>
+</body>
+
+</html>
