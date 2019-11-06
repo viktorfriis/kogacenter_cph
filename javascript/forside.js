@@ -2,7 +2,7 @@
     let bikes = [];
 
     //Definerer destinationen hvor hver article skal sættes ind
-    const dest = document.querySelector(".bikes");
+    const dest = document.querySelector("#pop");
 
     //Definerer templaten hvor som hver øl post skal følge
     const temp = document.querySelector("template");
@@ -32,7 +32,7 @@
         console.log("SHOWBIKES");
         //For hvert array objekt skriver jeg dataen ind i en template
         bikes.forEach(bike => {
-            if (bike.kategori == "Trekking") {
+            if (bike.pop == "1") {
                 const klon = temp.cloneNode(true).content;
 
                 klon.querySelector(".bike_img").src = bike.billede.guid;
@@ -44,7 +44,7 @@
                 //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
                 //De bliver sendt videre med deres ID, som er defineret i JSON filen
                 klon.querySelector(".bike").addEventListener("click", () => {
-                    location.href = `cykel.html?id=${bike.id}`;
+                    location.href = `/cykler/cykel.html?id=${bike.id}`;
                 })
 
                 //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen
