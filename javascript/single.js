@@ -95,4 +95,6 @@
 
      document.querySelector("#book").style.display = "block";
 
+     document.querySelector("#book form").action = "mailto:viktorfriiskjeldal@gmail.com?Subject=Book%20en%20prøvetur%20på%20KOGA " + bike.model;
+
  }
