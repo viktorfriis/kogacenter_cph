@@ -99,19 +99,77 @@ button h3 {
     padding: 30px;
 }
 
-#pop h1 {
+#pop,
+#why h1 {
     color: black;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#pop hr {
+#pop hr,
+#why hr {
     width: 55.5%;
     height: 2px;
     background-color: var(--koga-blue);
     border: none;
     margin-bottom: 20px;
+}
+
+#why {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+#why h1 {
+    grid-column: 1/4;
+}
+
+#why hr {
+    grid-column: 1/4;
+    width: 50%;
+    height: 2px;
+}
+
+#why figure {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100%;
+}
+
+#why figcaption {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-family: 'Montserrat';
+    font-weight: bold;
+}
+
+#why figure img {
+    width: 100%;
+}
+
+.tint {
+    position: relative;
+    float: left;
+}
+
+.tint:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--koga-blue);
+    opacity: 0.4;
 }
 
 article.bike {
@@ -684,6 +742,10 @@ footer p {
 
     }
 
+    #why figcaption {
+        font-size: 3rem;
+
+    }
 
     .bikes {
         grid-template-columns: 1fr 1fr;
