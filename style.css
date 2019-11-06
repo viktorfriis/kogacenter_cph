@@ -30,7 +30,7 @@ h2 {
 
 h3 {
     font-size: 1.8rem;
-    font-family: sans-serif;
+    font-family: 'Roboto';
 }
 
 p {
@@ -334,7 +334,8 @@ h2 {
 
 #book input[type=text],
 input[type=email],
-input[type=number],
+input[type=tel],
+input[type=date],
 select,
 textarea {
     width: 100%;
@@ -345,6 +346,9 @@ textarea {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
+
+    font-size: 1.4rem;
+    font-family: 'Montserrat';
 }
 
 #book input[type=submit] {
@@ -388,6 +392,13 @@ textarea {
     text-transform: capitalize;
     pointer-events: none;
     margin: 0;
+}
+
+#date {
+    display: block;
+    margin-top: 6px;
+    font-size: 1.4rem;
+    font-family: 'Montserrat';
 }
 
 
