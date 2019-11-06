@@ -44,7 +44,7 @@
           //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
           //De bliver sendt videre med deres ID, som er defineret i JSON filen
           klon.querySelector(".bike").addEventListener("click", () => {
-              location.href = `cykel.html?id=${bike.id}`;
+              location.href = `/cykler/cykel.html?id=${bike.id}`;
           })
 
           //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen
