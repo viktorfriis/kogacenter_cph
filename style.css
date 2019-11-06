@@ -15,14 +15,16 @@ html {
 
 h1 {
     font-size: 3rem;
-    font-family: sans-serif;
+    font-family: 'Roboto';
     margin-bottom: 10px;
 }
 
 h2 {
     font-size: 2rem;
-    font-family: sans-serif;
+    font-family: 'Oswald';
     margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 h3 {
@@ -32,7 +34,7 @@ h3 {
 
 p {
     font-size: 1.6rem;
-    font-family: sans-serif;
+    font-family: 'Montserrat';
 }
 
 figure {
@@ -54,14 +56,14 @@ button h3 {
 
 #txt_logo {
     position: absolute;
-    top: 180px;
+    top: 270px;
     left: 30px;
 }
 
 /* HEADER */
 .top_header {
     width: 100vw;
-    height: 40px;
+    height: 15px;
     background-color: #005690;
     display: flex;
     justify-content: flex-end;
@@ -74,7 +76,7 @@ button h3 {
     justify-content: space-between;
 
     width: 100vw;
-    height: 100px;
+    height: 65px;
     background-color: var(--koga-blue);
 
 }
@@ -97,7 +99,7 @@ a {
 }
 
 header #logo img {
-    height: 60px;
+    height: 65px;
 }
 
 nav {
@@ -547,7 +549,7 @@ footer p {
 
     #txt_logo {
         position: absolute;
-        top: 200px;
+        top: 300px;
         left: 50px;
     }
 
