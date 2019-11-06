@@ -4,6 +4,11 @@
     scroll-behavior: smooth;
 }
 
+#anchor {
+    position: absolute;
+    transform: translateY(-50px);
+}
+
 body {
     margin: 0;
 }
@@ -25,11 +30,12 @@ h2 {
     margin-bottom: 10px;
     letter-spacing: 1px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 h3 {
     font-size: 1.8rem;
-    font-family: sans-serif;
+    font-family: 'Roboto';
 }
 
 p {
@@ -333,7 +339,8 @@ h2 {
 
 #book input[type=text],
 input[type=email],
-input[type=number],
+input[type=tel],
+input[type=date],
 select,
 textarea {
     width: 100%;
@@ -344,6 +351,9 @@ textarea {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
+
+    font-size: 1.4rem;
+    font-family: 'Montserrat';
 }
 
 #book input[type=submit] {
@@ -389,6 +399,13 @@ textarea {
     margin: 0;
 }
 
+#date {
+    display: block;
+    margin-top: 6px;
+    font-size: 1.4rem;
+    font-family: 'Montserrat';
+}
+
 
 /* TABS */
 .tab {
@@ -431,6 +448,17 @@ textarea {
 .tab_closed {
     border: none;
     outline: none;
+}
+
+/*OM OS*/
+
+#omos h2 {
+    font-size: 2rem;
+    font-family: 'Oswald';
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: black;
 }
 
 /*FOOTER*/
