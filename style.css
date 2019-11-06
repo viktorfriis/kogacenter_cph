@@ -500,6 +500,13 @@ textarea {
 
 /*OM OS*/
 
+#omos {
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 30px;
+}
+
 #omos h2 {
     font-size: 2rem;
     font-family: 'Oswald';
