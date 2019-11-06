@@ -26,6 +26,8 @@
      descTab.addEventListener("click", openTab);
      specTab.addEventListener("click", openTab);
      revTab.addEventListener("click", openTab);
+
+     document.querySelector(".cta").addEventListener("click", openForm);
  }
 
  async function getJson() {
@@ -62,6 +64,10 @@
      document.querySelector("#specs ul li+li+li+li").textContent = bike.spec_4;
      document.querySelector("#specs ul li+li+li+li+li").textContent = bike.spec_5;
      document.querySelector("#specs ul li+li+li+li+li+li").textContent = bike.spec_6;
+
+     document.querySelector(".book_link").href = "cykel.html?id=" + bike.id + "#anchor";
+
+     document.querySelector(".check_name").textContent = "KOGA " + bike.model;
  }
 
  function openTab() {
@@ -82,4 +88,13 @@
      console.log(detail);
 
      document.querySelector(detail).style.display = "block";
+ }
+
+ function openForm() {
+     console.log("openForm");
+
+     document.querySelector("#book").style.display = "block";
+
+     document.querySelector("#book form").action = "mailto:viktorfriiskjeldal@gmail.com?Subject=Book%20en%20prøvetur%20på%20KOGA " + bike.model;
+
  }
