@@ -143,17 +143,36 @@ button h3 {
 
 #why figcaption {
     position: absolute;
+    text-align: center;
     bottom: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
+    /*transform: translate(-50%, -50%);*/
+    font-size: 1.8rem;
     font-family: 'Montserrat';
     font-weight: bold;
+    width: 100%;
+}
+
+/*#why h3 {
+    font-size: 1.8rem;
+}*/
+
+#why .tekst {
+    transition: 0.5s all;
+}
+
+#why .tekst:hover {
+    /*transform: scale(1.1);*/
+    background-color: rgba(14, 125, 199, 0.83);
+}
+
+#why h3:hover {
+    transform: scale(1.1);
 }
 
 #why figure img {
     width: 100%;
 }
+
 
 .tint {
     position: relative;
