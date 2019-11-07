@@ -147,17 +147,26 @@ button h3 {
 
 #why figcaption {
     position: absolute;
+    text-align: center;
     bottom: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-family: 'Montserrat';
     font-weight: bold;
+    width: 100%;
+}
+
+#why .tekst {
+    transition: 0.5s all;
+}
+
+#why .tekst:hover {
+    background-color: rgba(14, 125, 199, 0.83);
 }
 
 #why figure img {
     width: 100%;
 }
+
 
 .tint {
     position: relative;
@@ -741,13 +750,13 @@ footer p {
         height: 2px;
     }
 
-    #why figcaption {
+    #why h3 {
         font-size: 3rem;
 
     }
 
     .bikes {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         max-width: 1000px;
         margin: 0 auto;
     }
