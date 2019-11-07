@@ -8,7 +8,7 @@ function start() {
 async function hentHeader() {
     console.log("header");
 
-    const theHeader = await fetch("/header.html");
+    const theHeader = await fetch("header.html");
     let theFetched = await theHeader.text();
     document.querySelector("header").innerHTML = theFetched;
 
@@ -19,7 +19,7 @@ async function hentHeader() {
 async function hentFooter() {
     console.log("footer");
 
-    const theFooter = await fetch("/footer.html");
+    const theFooter = await fetch("footer.html");
     let theFetched = await theFooter.text();
     document.querySelector("footer").innerHTML = theFetched;
 

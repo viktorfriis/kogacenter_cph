@@ -16,7 +16,7 @@
     async function getJson() {
         console.log("getJson");
 
-        const url = "http://viktorkjeldal.dk/kea/2sem/kogacenter_cph/wordpress/wp-json/wp/v2/cykel?per_page=100";
+        const url = "https://viktorkjeldal.dk/kea/2sem/kogacenter_cph/wordpress/wp-json/wp/v2/cykel?per_page=100";
 
         //Henter data i filen som er defineret ovenfor
         const jsonData = await fetch(url);
@@ -44,7 +44,7 @@
                 //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
                 //De bliver sendt videre med deres ID, som er defineret i JSON filen
                 klon.querySelector(".bike").addEventListener("click", () => {
-                    location.href = `/cykler/cykel.html?id=${bike.id}`;
+                    location.href = `cykel.html?id=${bike.id}`;
                 })
 
                 //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen

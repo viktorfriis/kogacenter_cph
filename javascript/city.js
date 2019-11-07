@@ -16,7 +16,7 @@
   async function getJson() {
       console.log("getJson");
 
-      const url = "http://viktorkjeldal.dk/kea/2sem/kogacenter_cph/wordpress/wp-json/wp/v2/cykel";
+      const url = "https://viktorkjeldal.dk/kea/2sem/kogacenter_cph/wordpress/wp-json/wp/v2/cykel";
 
       //Henter data i filen som er defineret ovenfor
       const jsonData = await fetch(url);

@@ -34,7 +34,7 @@
      console.log("getJson");
 
      //Henter nu kun JSON data for den enkelte post jeg har klikket på
-     const url = "http://viktorkjeldal.dk/kea/2sem/kogacenter_cph/wordpress/wp-json/wp/v2/cykel/" + id;
+     const url = "https://viktorkjeldal.dk/kea/2sem/kogacenter_cph/wordpress/wp-json/wp/v2/cykel/" + id;
      const jsonData = await fetch(url);
      bike = await jsonData.json();
 
