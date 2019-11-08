@@ -32,6 +32,9 @@ function burgerAktiv() {
     const burgerKnap = document.querySelector("#burger_knap");
     const menu = document.querySelector("#menu");
 
+    const dropdown = document.querySelector("#dropdown");
+    const dropdownLink = document.querySelector("#cykler");
+
     burgerKnap.addEventListener("click", () => {
         console.log("openMenu");
 
@@ -39,5 +42,21 @@ function burgerAktiv() {
         burgerKnap.classList.toggle("pos_fixed"); //Knappen toggler position fixed, for at den bliver i toppen af skærmen når den er åben
 
         menu.classList.toggle("toggle_menu"); //Selve menuen toggler klassen .toggle_menu, som åbner og lukker menuen
+    })
+
+    dropdownLink.addEventListener("mouseover", () => {
+        dropdown.style.display = "grid";
+    })
+
+    dropdown.addEventListener("mouseover", () => {
+        dropdown.style.display = "grid";
+    })
+
+    dropdownLink.addEventListener("mouseout", () => {
+        dropdown.style.display = "none";
+    })
+
+    dropdown.addEventListener("mouseout", () => {
+        dropdown.style.display = "none";
     })
 }
