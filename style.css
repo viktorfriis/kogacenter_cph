@@ -79,6 +79,15 @@ figure {
 
 button h3 {
     margin: 0;
+    color: white;
+}
+
+.tab_closed h3 {
+    color: black;
+}
+
+.tab_selected h3 {
+    color: white;
 }
 
 /*FORSIDE*/
@@ -364,8 +373,9 @@ nav {
     background-color: white;
     padding: 0;
     display: none;
-    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    grid-template-columns: 1fr auto 1fr auto;
     align-items: center;
+    justify-items: center;
 }
 
 #dropdown hr {
@@ -378,27 +388,37 @@ nav {
     padding: 0;
 }
 
+.dropdown_h2 {
+    color: black;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
 #dropdown:hover {
     display: grid;
 }
 
 #dropdown img {
-    width: 100%;
+    width: 180px;
     padding-top: 10px;
-}
-
-#dropdown h2 {
-    color: black;
-    font-size: 1.5rem;
-    text-align: center;
 }
 
 .dropdown_elm {
     cursor: pointer;
 }
 
-.dropdown_elm:hover ~ .dropdown_h2 {
+.dropdown_elm:hover .dropdown_h2 {
     color: var(--koga-blue);
+}
+
+.hover_effect {
+    background-color: black;
+    position: absolute;
+    width: 100vw;
+    height: 3000px;
+    z-index: 10;
+    opacity: 0.5;
+    display: none;
 }
 
 .details p,
@@ -466,6 +486,17 @@ h2 {
 .kort,
 .pris {
     margin: 5px 0;
+}
+
+.gammel_pris {
+    text-decoration: line-through;
+    color: grey;
+    margin-bottom: 5px;
+}
+
+.ny_pris {
+    font-weight: bold;
+    margin-top: 0;
 }
 
 /* CYKLER I SINGLE VIEW */
@@ -618,21 +649,28 @@ textarea {
 }
 
 /*OM OS*/
-
-#omos {
+#kogacenter {
     max-width: 1000px;
     margin: 0 auto;
     justify-content: center;
     padding: 30px;
 }
 
-#omos h2 {
+#kogacenter h2 {
     font-size: 2rem;
     font-family: 'Oswald';
     margin-bottom: 10px;
     letter-spacing: 1px;
     font-weight: 600;
     color: black;
+}
+
+#kogacenter p {
+    line-height: 1.5;
+}
+
+#kogacenter img {
+    width: 100%;
 }
 
 /*FOOTER*/
@@ -727,7 +765,11 @@ footer p {
 
     #dropdown hr {
         height: 40px;
-        border: .5px solid grey;
+        border: .5px solid var(--koga-blue);
+    }
+
+    .dropdown_elm:hover .dropdown_h2 {
+        color: var(--koga-blue);
     }
 
     #dropdown a {
@@ -744,7 +786,7 @@ footer p {
         padding-top: 10px;
     }
 
-    #dropdown h2 {
+    .dropdown_h2 {
         color: black;
         font-size: 1.5rem;
         text-align: center;
@@ -823,6 +865,19 @@ footer p {
 
     .citatejer {
         margin-right: 18%;
+    }
+
+    #kogacenter {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #kogacenter h2 {
+        grid-column: 1/3;
+    }
+
+    #kogacenter img {
+        padding: 0 0 0 30px;
     }
 }
 
