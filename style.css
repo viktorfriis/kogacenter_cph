@@ -1,13 +1,9 @@
+/***GENERELLE INDSTILLINGER***/
+
 * {
     box-sizing: border-box;
     --koga-blue: #0E7DC7;
     scroll-behavior: smooth;
-}
-
-#booking {
-    background-color: transparent;
-    width: 20px;
-    height: 20px;
 }
 
 body {
@@ -61,23 +57,6 @@ em {
     font-weight: bold;
 }
 
-.citatejer {
-    text-align: right;
-    font-family: 'Montserrat';
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-    font-weight: 200;
-    font-size: 1.9rem;
-    color: rgba(0, 0, 0, 0.32);
-
-}
-
-#quote {
-    padding: 50px;
-    /*text-align: center;*/
-    /*background-color: rgba(141, 138, 138, 0.13);*/
-}
-
 figure {
     margin: 0;
 }
@@ -95,219 +74,37 @@ button h3 {
     color: white;
 }
 
-/*FORSIDE*/
-/*
-.slideshow_container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-}
-
-.slideshow_container img {
-    width: 100%;
-}
-
-.mySlides {
-    display: none;
-}
-
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-    background-color: #717171;
-}
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-*/
-
-
-#baggrund img {
-    width: 100%;
-}
-
-#txt_logo img {
-    width: 250px;
-}
-
-#txt_logo {
-    position: absolute;
-    top: 150px;
-    left: 30px;
-}
-
-#pop {
-    padding: 30px;
-}
-
-#pop .bike {
-    background-color: white;
-    margin: 30px 0;
-    padding: 20px;
-}
-
-#pop,
-#why h1 {
-    color: black;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-#pop hr,
-#why hr {
-    width: 55.5%;
-    height: 2px;
-    background-color: var(--koga-blue);
-    border: none;
-    margin-bottom: 20px;
-}
-
-#pop article.bike:hover {
-    transform: scale(1.05);
-}
-
-.pop_wrap {
-    width: 100vw;
-    background-color: rgba(191, 191, 191, 0.3);
-}
-
-#why {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px;
-}
-
-#why h1 {
-    grid-column: 1/4;
-}
-
-#why hr {
-    grid-column: 1/4;
-    width: 50%;
-    height: 2px;
-}
-
-#why figure {
-    position: relative;
-    text-align: center;
-    color: white;
-    height: 100%;
-}
-
-#why figcaption {
-    position: absolute;
-    text-align: center;
-    bottom: 10%;
-    font-size: 1.8rem;
-    font-family: 'Montserrat';
-    font-weight: bold;
-    width: 100%;
-}
-
-#why .tekst {
-    transition: 0.5s all;
-}
-
-#why .tekst:hover {
-    background-color: rgba(14, 125, 199, 0.83);
-}
-
-#why figure img {
-    width: 100%;
-}
-
-
-.tint {
-    position: relative;
-    float: left;
-}
-
-.tint:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--koga-blue);
-    opacity: 0.4;
-}
-
 article.bike {
     transition: 0.5s all;
     text-align: left;
 }
 
-#quote {
+
+.om-cykel {
     max-width: 1000px;
     margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 40px;
 }
 
-/* HEADER */
+.om-cykel p {
+    font-style: italic;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.32);
+    hyphens: auto;
+    margin-top: 6.5px;
+}
+
+.om-cykel h2 {
+    margin-bottom: 0;
+    color: black;
+    font-style: italic;
+}
+
+/***GENERELLE INDSTILLINGER SLUT***/
+
+/***HEADER***/
 .main_header {
     display: flex;
     align-items: center;
@@ -566,27 +363,9 @@ h2 {
     max-width: 800px;
 }
 
-.om-cykel {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-bottom: 40px;
-}
+/***HEADER SLUT***/
 
-.om-cykel p {
-    font-style: italic;
-    line-height: 1.4;
-    color: rgba(0, 0, 0, 0.32);
-    hyphens: auto;
-    margin-top: 6.5px;
-}
-
-.om-cykel h2 {
-    margin-bottom: 0;
-    color: black;
-    font-style: italic;
-}
+/***FORSIDE***/
 
 #splash {
     width: 100vw;
@@ -606,17 +385,142 @@ h2 {
     top: 100px;
 }
 
-#kontakt {
-    padding: 30px;
-    max-width: 800px;
+.citatejer {
+    text-align: right;
+    font-family: 'Montserrat';
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 200;
+    font-size: 1.9rem;
+    color: rgba(0, 0, 0, 0.32);
+
+}
+
+#quote {
+    padding: 50px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-#kontakt h2 {
-    color: black;
+#baggrund img {
+    width: 100%;
 }
 
-/* CYKLER I LISTE VISNING */
+#txt_logo img {
+    width: 250px;
+}
+
+#txt_logo {
+    position: absolute;
+    top: 150px;
+    left: 30px;
+}
+
+#pop {
+    padding: 30px;
+}
+
+#pop .bike {
+    background-color: white;
+    margin: 30px 0;
+    padding: 20px;
+}
+
+#pop,
+#why h1 {
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#pop hr,
+#why hr {
+    width: 55.5%;
+    height: 2px;
+    background-color: var(--koga-blue);
+    border: none;
+    margin-bottom: 20px;
+}
+
+#pop article.bike:hover {
+    transform: scale(1.05);
+}
+
+.pop_wrap {
+    width: 100vw;
+    background-color: rgba(191, 191, 191, 0.3);
+}
+
+#why {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+#why h1 {
+    grid-column: 1/4;
+}
+
+#why hr {
+    grid-column: 1/4;
+    width: 50%;
+    height: 2px;
+}
+
+#why figure {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100%;
+}
+
+#why figcaption {
+    position: absolute;
+    text-align: center;
+    bottom: 10%;
+    font-size: 1.8rem;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    width: 100%;
+}
+
+#why .tekst {
+    transition: 0.5s all;
+}
+
+#why .tekst:hover {
+    background-color: rgba(14, 125, 199, 0.83);
+}
+
+#why figure img {
+    width: 100%;
+}
+
+
+.tint {
+    position: relative;
+    float: left;
+}
+
+.tint:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--koga-blue);
+    opacity: 0.4;
+}
+
+/***FORSIDE SLUT***/
+
+/***CYKLER I LISTE VISNING***/
+
 .bikes {
     display: grid;
     grid-template-columns: 1fr;
@@ -658,6 +562,18 @@ h2 {
     margin-left: 10px;
 }
 
+/***CYKLER I LISTE VISNING SLUT***/
+
+/***CYKLER I SINGLE VIEW***/
+.single_bike {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.s_bike_img {
+    width: 100%;
+}
+
 .s_pris {
     text-decoration: line-through;
     color: grey;
@@ -667,16 +583,6 @@ h2 {
 
 .s_tilbud_pris {
     margin-top: 0;
-}
-
-/* CYKLER I SINGLE VIEW */
-.single_bike {
-    width: 90vw;
-    margin: 0 auto;
-}
-
-.s_bike_img {
-    width: 100%;
 }
 
 .cta {
@@ -818,7 +724,16 @@ textarea {
     outline: none;
 }
 
-/*OM OS*/
+#booking {
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+}
+
+/***CYKLER I SINGLE VIEW SLUT***/
+
+/***OM OS***/
+
 #omos {
     max-width: 800px;
     margin: 0 auto;
@@ -843,7 +758,23 @@ textarea {
     width: 100%;
 }
 
-/*FOOTER*/
+/***OM OS SLUT***/
+
+/***KONTAKT***/
+
+#kontakt {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#kontakt h2 {
+    color: black;
+}
+
+/***KONTAKT SLUT***/
+
+/***FOOTER***/
 
 .googlemaps iframe {
     width: 100vw;
@@ -883,11 +814,58 @@ footer p {
     line-height: 1.5;
 }
 
-/*FOOTER SLUT*/
+/***FOOTER SLUT***/
 
 @media screen and (min-width: 850px) {
 
-    /* NAVIGATION */
+    /***GENRELLE***/
+
+    #kogacenter {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #kogacenter h2 {
+        grid-column: 1/3;
+    }
+
+    #kogacenter img {
+        padding: 0 0 0 30px;
+    }
+
+    .om-cykel {
+        padding-left: 0px;
+    }
+
+    .om-cykel p {
+        hyphens: none;
+    }
+
+    .bikes {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .single_bike {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .details {
+        grid-column: 1/3;
+    }
+
+    .s_model {
+        margin-top: 50px;
+    }
+
+
+    /***GENRELLE SLUT***/
+
+    /***NAVIGATION***/
     nav {
         background-color: transparent;
         position: relative;
@@ -962,7 +940,10 @@ footer p {
         text-align: center;
     }
 
-    /* FORSIDE */
+    /***NAVIGATION SLUT***/
+
+    /***FORSIDE***/
+
     #txt_logo img {
         width: 450px;
     }
@@ -1005,26 +986,19 @@ footer p {
 
     }
 
-    .bikes {
-        grid-template-columns: 1fr 1fr 1fr;
-        max-width: 1000px;
-        margin: 0 auto;
+    #quote {
+        text-align: center;
     }
 
-    .single_bike {
-        max-width: 1000px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
+    .citatejer {
+        margin-right: 18%;
     }
 
-    .details {
-        grid-column: 1/3;
-    }
 
-    .s_model {
-        margin-top: 50px;
-    }
+
+    /***FORSIDE SLUT***/
+
+    /***FOOTER***/
 
     .footer_wrapper {
         grid-template-columns: repeat(5, auto);
@@ -1034,36 +1008,7 @@ footer p {
         padding: 30px;
     }
 
-    #quote {
-        text-align: center;
-    }
-
-    .citatejer {
-        margin-right: 18%;
-    }
-
-    #kogacenter {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-    }
-
-    #kogacenter h2 {
-        grid-column: 1/3;
-    }
-
-    #kogacenter img {
-        padding: 0 0 0 30px;
-    }
-
-    .om-cykel {
-        padding-left: 0px;
-    }
-
-    .om-cykel p {
-        hyphens: none;
-    }
-
-
+    /***FOOTER SLUT***/
 
 }
 
