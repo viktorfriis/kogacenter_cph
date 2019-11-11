@@ -658,6 +658,17 @@ h2 {
     margin-left: 10px;
 }
 
+.s_pris {
+    text-decoration: line-through;
+    color: grey;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.s_tilbud_pris {
+    margin-top: 0;
+}
+
 /* CYKLER I SINGLE VIEW */
 .single_bike {
     width: 90vw;
@@ -964,7 +975,7 @@ footer p {
 
     #pop {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: auto auto auto;
         max-width: 1000px;
         margin: 0 auto;
         grid-gap: 20px;
@@ -986,6 +997,7 @@ footer p {
 
     #pop .bike {
         margin-bottom: 50px;
+        min-width: 300px;
     }
 
     #why h3 {
