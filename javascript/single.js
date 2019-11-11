@@ -65,7 +65,7 @@
      document.querySelector("#specs ul li+li+li+li+li").textContent = bike.spec_5;
      document.querySelector("#specs ul li+li+li+li+li+li").textContent = bike.spec_6;
 
-     document.querySelector(".book_link").href = "cykel.html?id=" + bike.id + "#anchor";
+     document.querySelector(".book_link").href = "cykel.html?id=" + bike.id + "#booking";
 
      document.querySelector(".check_name").textContent = "KOGA " + bike.model;
  }
