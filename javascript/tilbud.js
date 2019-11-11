@@ -39,6 +39,8 @@
                 klon.querySelector(".bike_img").alt = bike.alt_tag;
                 klon.querySelector(".model").textContent = bike.model;
                 klon.querySelector(".kort").textContent = bike.kort;
+
+                klon.querySelector(".gammel_pris").style.fontWeight = "100";
                 klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
                 klon.querySelector(".ny_pris").textContent = bike.ny_pris + " DKK";
 
