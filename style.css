@@ -287,9 +287,8 @@ article.bike {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: 100vw;
-    height: 65px;
+    height: 105px;
     background-color: white;
 }
 
@@ -303,7 +302,6 @@ article.bike {
 #logo h1,
 a {
     text-align: left;
-
     font-size: 1.8rem;
     text-decoration: none;
     color: black;
@@ -330,6 +328,7 @@ nav {
     justify-content: center;
     align-items: center;
 }
+
 
 /* Den klasse der åbner burgermenuen */
 .toggle_menu {
@@ -511,7 +510,7 @@ h2 {
 .title {
     width: 100vw;
     height: 80px;
-    background-color: black;
+    background-color: var(--koga-blue);
     color: white;
 }
 
@@ -526,6 +525,29 @@ h2 {
 .title_wrap h1 {
     text-transform: uppercase;
 }
+
+.om-cykel {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 40px;
+}
+
+.om-cykel p {
+    font-style: italic;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.32);
+    hyphens: auto;
+    margin-top: 6.5px;
+}
+
+.om-cykel h2 {
+    margin-bottom: 0;
+    color: black;
+    font-style: italic;
+}
+
 
 /* CYKLER I LISTE VISNING */
 .bikes {
@@ -910,10 +932,21 @@ footer p {
     .citatejer {
         margin-right: 18%;
     }
+
+    .om-cykel {
+        padding-left: 0px;
+    }
+
+    .om-cykel p {
+        hyphens: none;
+    }
+
 }
 
 @media screen and (min-width: 1000px) {
     .title_wrap {
         padding-left: 0;
     }
+
+
 }
