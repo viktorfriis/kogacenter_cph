@@ -12,8 +12,6 @@
  const specTab = document.querySelector("#spec_tab");
  const specs = document.querySelector("#specs");
 
- const revTab = document.querySelector("#rev_tab");
- const rev = document.querySelector("#rev");
 
  let detail;
 
@@ -25,7 +23,6 @@
 
      descTab.addEventListener("click", openTab);
      specTab.addEventListener("click", openTab);
-     revTab.addEventListener("click", openTab);
 
      document.querySelector(".cta").addEventListener("click", openForm);
  }
@@ -75,7 +72,6 @@
 
      descTab.className = "tab_closed";
      specTab.className = "tab_closed";
-     revTab.className = "tab_closed";
 
      this.classList.add("tab_selected");
 
@@ -83,7 +79,6 @@
 
      desc.style.display = "none";
      specs.style.display = "none";
-     rev.style.display = "none";
 
      console.log(detail);
 

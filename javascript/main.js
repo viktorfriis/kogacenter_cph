@@ -32,11 +32,10 @@ function burgerAktiv() {
     const burgerKnap = document.querySelector("#burger_knap");
     const menu = document.querySelector("#menu");
 
-    const dropElm = document.querySelector(".dropdown_elm");
-    const dropElmH2 = document.querySelector(".dropdown_h2");
-
     const dropdown = document.querySelector("#dropdown");
     const dropdownLink = document.querySelector("#cykler");
+
+    const hoverEffect = document.querySelector(".hover_effect");
 
     burgerKnap.addEventListener("click", () => {
         console.log("openMenu");
@@ -49,20 +48,29 @@ function burgerAktiv() {
 
     dropdownLink.addEventListener("mouseover", () => {
         dropdown.style.display = "grid";
+        hoverEffect.style.display = "block";
     })
 
     dropdown.addEventListener("mouseover", () => {
         dropdown.style.display = "grid";
         dropdownLink.style.color = "var(--koga-blue)";
+        hoverEffect.style.display = "block";
     })
 
     dropdownLink.addEventListener("mouseout", () => {
         dropdown.style.display = "none";
+        hoverEffect.style.display = "none";
     })
 
     dropdown.addEventListener("mouseout", () => {
         dropdown.style.display = "none";
         dropdownLink.style.color = "";
+        hoverEffect.style.display = "none";
+    })
+
+    dropdownLink.addEventListener("click", () => {
+        dropdown.style.display = "grid";
+        hoverEffect.style.display = "block";
     })
 }
 
