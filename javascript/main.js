@@ -32,6 +32,9 @@ function burgerAktiv() {
     const burgerKnap = document.querySelector("#burger_knap");
     const menu = document.querySelector("#menu");
 
+    const dropElm = document.querySelector(".dropdown_elm");
+    const dropElmH2 = document.querySelector(".dropdown_h2");
+
     const dropdown = document.querySelector("#dropdown");
     const dropdownLink = document.querySelector("#cykler");
 
@@ -50,6 +53,7 @@ function burgerAktiv() {
 
     dropdown.addEventListener("mouseover", () => {
         dropdown.style.display = "grid";
+        dropdownLink.style.color = "var(--koga-blue)";
     })
 
     dropdownLink.addEventListener("mouseout", () => {
@@ -58,5 +62,6 @@ function burgerAktiv() {
 
     dropdown.addEventListener("mouseout", () => {
         dropdown.style.display = "none";
+        dropdownLink.style.color = "";
     })
 }
