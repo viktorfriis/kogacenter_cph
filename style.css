@@ -195,6 +195,23 @@ button h3 {
     padding: 30px;
 }
 
+#pop .bike {
+    background-color: white;
+
+}
+
+#pop .model,
+#pop .kort,
+#pop .pris {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#pop .pris {
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+}
+
 #pop,
 #why h1 {
     color: black;
@@ -214,6 +231,11 @@ button h3 {
 
 #pop article.bike:hover {
     transform: scale(1.05);
+}
+
+.pop_wrap {
+    width: 100vw;
+    background-color: rgba(191, 191, 191, 0.3);
 }
 
 #why {
@@ -931,6 +953,10 @@ footer p {
         grid-column: 1/4;
         width: 50%;
         height: 2px;
+    }
+
+    #pop .bike {
+        margin-bottom: 50px;
     }
 
     #why h3 {
