@@ -91,6 +91,92 @@ button h3 {
 }
 
 /*FORSIDE*/
+/*
+.slideshow_container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.slideshow_container img {
+    width: 100%;
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+*/
+
+
 #baggrund img {
     width: 100%;
 }
@@ -210,9 +296,8 @@ article.bike {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: 100vw;
-    height: 65px;
+    height: 105px;
     background-color: white;
 }
 
@@ -226,7 +311,6 @@ article.bike {
 #logo h1,
 a {
     text-align: left;
-
     font-size: 1.8rem;
     text-decoration: none;
     color: black;
@@ -253,6 +337,7 @@ nav {
     justify-content: center;
     align-items: center;
 }
+
 
 /* Den klasse der åbner burgermenuen */
 .toggle_menu {
@@ -445,7 +530,7 @@ h2 {
 .title {
     width: 100vw;
     height: 80px;
-    background-color: black;
+    background-color: var(--koga-blue);
     color: white;
 }
 
@@ -460,6 +545,29 @@ h2 {
 .title_wrap h1 {
     text-transform: uppercase;
 }
+
+.om-cykel {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 40px;
+}
+
+.om-cykel p {
+    font-style: italic;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.32);
+    hyphens: auto;
+    margin-top: 6.5px;
+}
+
+.om-cykel h2 {
+    margin-bottom: 0;
+    color: black;
+    font-style: italic;
+}
+
 
 /* CYKLER I LISTE VISNING */
 .bikes {
@@ -879,10 +987,21 @@ footer p {
     #kogacenter img {
         padding: 0 0 0 30px;
     }
+
+    .om-cykel {
+        padding-left: 0px;
+    }
+
+    .om-cykel p {
+        hyphens: none;
+    }
+
 }
 
 @media screen and (min-width: 1000px) {
     .title_wrap {
         padding-left: 0;
     }
+
+
 }
