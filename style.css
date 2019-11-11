@@ -202,19 +202,8 @@ button h3 {
 
 #pop .bike {
     background-color: white;
-
-}
-
-#pop .model,
-#pop .kort,
-#pop .pris {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-#pop .pris {
-    margin-bottom: 35px;
-    padding-bottom: 20px;
+    margin: 30px 0;
+    padding: 20px;
 }
 
 #pop,
@@ -658,11 +647,15 @@ h2 {
     text-decoration: line-through;
     color: grey;
     margin-bottom: 5px;
+    display: inline;
+    font-weight: bold;
 }
 
 .ny_pris {
     font-weight: bold;
     margin-top: 0;
+    display: inline;
+    margin-left: 10px;
 }
 
 /* CYKLER I SINGLE VIEW */
@@ -978,7 +971,7 @@ footer p {
     }
 
     #pop img {
-        height: 200px;
+        width: 100%;
     }
 
     #pop h1 {

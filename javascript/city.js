@@ -39,7 +39,17 @@
               klon.querySelector(".bike_img").alt = bike.alt_tag;
               klon.querySelector(".model").textContent = bike.model;
               klon.querySelector(".kort").textContent = bike.kort;
-              klon.querySelector(".pris").textContent = bike.pris + " DKK";
+
+              if (bike.ny_pris == "") {
+                  klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
+                  klon.querySelector(".gammel_pris").style.textDecoration = "none";
+                  klon.querySelector(".gammel_pris").style.color = "black";
+              } else {
+                  klon.querySelector(".gammel_pris").style.fontWeight = "100";
+                  klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
+                  klon.querySelector(".ny_pris").textContent = bike.ny_pris + " DKK";
+              }
+
 
               //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
               //De bliver sendt videre med deres ID, som er defineret i JSON filen
