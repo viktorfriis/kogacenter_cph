@@ -56,6 +56,11 @@ q {
 
 }
 
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+
 .citatejer {
     text-align: right;
     font-family: 'Montserrat';
@@ -326,7 +331,7 @@ article.bike {
 #logo {
     display: flex;
     align-items: center;
-    width: 200px;
+    width: 240px;
     margin-left: 30px;
 }
 
@@ -568,6 +573,10 @@ h2 {
     text-transform: uppercase;
 }
 
+.small_width {
+    max-width: 800px;
+}
+
 .om-cykel {
     max-width: 1000px;
     margin: 0 auto;
@@ -590,6 +599,33 @@ h2 {
     font-style: italic;
 }
 
+#splash {
+    width: 100vw;
+    height: 60vh;
+    background-image: url(img/baggrundmedlogo.png);
+    background-position: right;
+    background-size: cover;
+    position: relative;
+}
+
+#splash h1 {
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+    font-style: italic;
+    left: 100px;
+    top: 100px;
+}
+
+#kontakt {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#kontakt h2 {
+    color: black;
+}
 
 /* CYKLER I LISTE VISNING */
 .bikes {
@@ -1022,6 +1058,8 @@ footer p {
         hyphens: none;
     }
 
+
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -1029,5 +1067,12 @@ footer p {
         padding-left: 0;
     }
 
+    #kontakt {
+        padding: 0;
+    }
+
+    #omos {
+        padding: 0;
+    }
 
 }
