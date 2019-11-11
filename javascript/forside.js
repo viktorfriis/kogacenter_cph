@@ -1,6 +1,8 @@
     //Definerer variablen hvor alle vores posts kommer ind i et array
     let bikes = [];
 
+    let popBikes = [];
+
     //Definerer destinationen hvor hver article skal sættes ind
     const dest = document.querySelector("#pop");
 
@@ -24,41 +26,57 @@
         //Indsætter dataen i mit array
         bikes = await jsonData.json();
 
-        console.log(bikes);
+        //Filtrerer hele arrayet med alle cykler fra wordpress, og laver et nyt array, kun med de populære cykler.
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+        popBikes = bikes.filter(popBike => popBike.pop == "1");
+
+        shuffle(popBikes);
+    }
+
+    //Funktionen nedenfor "shuffler", altså blander arrayet, så rækkefølgen af cyklerne er forskellig hver gang.
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+
+        //Sætter "længden" af arrayet til 3, dvs at der er kun er 3 cykler med i arrayet
+        popBikes.length = 3;
         showBikes();
     }
 
     function showBikes() {
         console.log("SHOWBIKES");
         //For hvert array objekt skriver jeg dataen ind i en template
-        bikes.forEach(bike => {
-            if (bike.pop == "1") {
-                const klon = temp.cloneNode(true).content;
+        popBikes.forEach(popBike => {
+            const klon = temp.cloneNode(true).content;
 
-                klon.querySelector(".bike_img").src = bike.billede.guid;
-                klon.querySelector(".bike_img").alt = bike.alt_tag;
-                klon.querySelector(".model").textContent = bike.model;
-                klon.querySelector(".kort").textContent = bike.kort;
+            klon.querySelector(".bike_img").src = popBike.billede.guid;
+            klon.querySelector(".bike_img").alt = popBike.alt_tag;
+            klon.querySelector(".model").textContent = popBike.model;
+            klon.querySelector(".kort").textContent = popBike.kort;
 
-                if (bike.ny_pris == "") {
-                    klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
-                    klon.querySelector(".gammel_pris").style.textDecoration = "none";
-                    klon.querySelector(".gammel_pris").style.color = "black";
-                } else {
-                    klon.querySelector(".gammel_pris").style.fontWeight = "100";
-                    klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
-                    klon.querySelector(".ny_pris").textContent = bike.ny_pris + " DKK";
-                }
-
-
-                //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
-                //De bliver sendt videre med deres ID, som er defineret i JSON filen
-                klon.querySelector(".bike").addEventListener("click", () => {
-                    location.href = `cykel.html?id=${bike.id}`;
-                })
-
-                //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen
-                dest.appendChild(klon);
+            if (popBike.ny_pris == "") {
+                klon.querySelector(".gammel_pris").textContent = popBike.pris + " DKK";
+                klon.querySelector(".gammel_pris").style.textDecoration = "none";
+                klon.querySelector(".gammel_pris").style.color = "black";
+            } else {
+                klon.querySelector(".gammel_pris").style.fontWeight = "100";
+                klon.querySelector(".gammel_pris").textContent = popBike.pris + " DKK";
+                klon.querySelector(".ny_pris").textContent = popBike.ny_pris + " DKK";
             }
+
+
+            //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
+            //De bliver sendt videre med deres ID, som er defineret i JSON filen
+            klon.querySelector(".bike").addEventListener("click", () => {
+                location.href = `cykel.html?id=${popBike.id}`;
+            })
+
+            //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen
+            dest.appendChild(klon);
         })
     }
