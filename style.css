@@ -757,14 +757,14 @@ textarea {
 }
 
 /*OM OS*/
-#kogacenter {
-    max-width: 1000px;
+#omos {
+    max-width: 800px;
     margin: 0 auto;
     justify-content: center;
     padding: 30px;
 }
 
-#kogacenter h2 {
+#omos h2 {
     font-size: 2rem;
     font-family: 'Oswald';
     margin-bottom: 10px;
@@ -773,7 +773,7 @@ textarea {
     color: black;
 }
 
-#kogacenter p {
+#omos p {
     line-height: 1.5;
 }
 
