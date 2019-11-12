@@ -1,11 +1,6 @@
 window.addEventListener("DOMContentLoaded", start);
-
 const urlParamsPage = new URLSearchParams(window.location.search);
 const page = urlParamsPage.get("page");
-
-console.log(page);
-
-document.querySelector("#" + page).style.color = "var(--koga-blue)";
 
 
 function start() {
@@ -16,11 +11,21 @@ function start() {
 async function hentHeader() {
     console.log("header");
 
+
     const theHeader = await fetch("header.html");
     let theFetched = await theHeader.text();
     document.querySelector("header").innerHTML = theFetched;
 
     burgerAktiv();
+    styleLink();
+}
+
+function styleLink() {
+    console.log(page);
+
+    document.querySelector("#" + page).style.color = "var(--koga-blue)";
+
+
 }
 
 async function hentFooter() {

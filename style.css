@@ -345,6 +345,13 @@ h2 {
 .title {
     width: 100vw;
     height: 80px;
+
+}
+
+.white {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
 .title_wrap {
@@ -581,9 +588,14 @@ figcaption h3 {
 /***CYKLER I LISTE VISNING SLUT***/
 
 /***CYKLER I SINGLE VIEW***/
+#cykel_body {
+    background-color: white;
+}
+
 .single_bike {
     width: 90vw;
     margin: 0 auto;
+    background-color: white;
 }
 
 .s_bike_img {
@@ -619,7 +631,10 @@ figcaption h3 {
     background-color: #dedede;
     padding: 20px;
     max-width: 1000px;
-    grid-column: 1/3;
+    display: block;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin: 0 0 30px 0;
     display: none;
 }
 
@@ -634,12 +649,12 @@ input[type=date],
 select,
 textarea {
     width: 100%;
-    padding: 12px;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 6px;
     resize: vertical;
 
     font-size: 1.4rem;
@@ -647,8 +662,8 @@ textarea {
 }
 
 #book input[type=submit] {
-    margin: 20px 0;
-    width: 90%;
+    margin: 10px 0 0 0;
+    width: 100%;
     height: 50px;
     max-width: 280px;
     background-color: var(--koga-blue);
@@ -661,7 +676,7 @@ textarea {
 }
 
 #book h2 {
-    margin-bottom: 0;
+    margin: 0;
     color: black;
 }
 
@@ -744,6 +759,9 @@ textarea {
     background-color: transparent;
     width: 20px;
     height: 20px;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    margin-top: -20px;
 }
 
 /***CYKLER I SINGLE VIEW SLUT***/
@@ -751,10 +769,11 @@ textarea {
 /***OM OS***/
 
 #omos {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     justify-content: center;
     padding: 30px;
+    background-color: white;
 }
 
 #omos h2 {
@@ -766,12 +785,25 @@ textarea {
     color: black;
 }
 
+#top_h2 {
+    margin-top: 0;
+}
+
 #omos p {
     line-height: 1.5;
     margin-top: -2px;
 }
 
-#kogacenter img {
+#desk_img {
+    width: 100%;
+    display: none;
+}
+
+#mobile_img {
+    display: block;
+}
+
+#mobile_img img {
     width: 100%;
 }
 
@@ -781,12 +813,22 @@ textarea {
 
 #kontakt_main {
     padding: 30px;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
+    background-color: white;
 }
 
 #kontakt_main h2 {
     color: black;
+}
+
+#top_p {
+    margin-top: 0;
+}
+
+#kontakt_mail {
+    color: black;
+    font-size: 1.6rem;
 }
 
 /***KONTAKT SLUT***/
@@ -796,7 +838,6 @@ textarea {
 .googlemaps iframe {
     width: 100vw;
     height: 30vh;
-    margin-top: 5rem;
 }
 
 .footer_wrapper {
@@ -836,15 +877,30 @@ footer p {
 @media screen and (min-width: 850px) {
 
     /***GENRELLE***/
-
-    #kogacenter {
+    #omos {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
+        grid-gap: 30px;
     }
 
-    #kogacenter h2 {
-        grid-column: 1/3;
+    #omos figure {
+        grid-column: 2/3;
+        grid-row: 1/2;
     }
+
+    #desk_img {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #desk_img img {
+        width: 100%;
+    }
+
+    #mobile_img {
+        display: none;
+    }
+
 
     #kogacenter img {
         padding: 0 0 0 30px;
@@ -856,6 +912,10 @@ footer p {
 
     .om-cykel p {
         hyphens: none;
+    }
+
+    #cykel_body {
+        background-color: rgba(191, 191, 191, 0.22);
     }
 
     .bikes {
@@ -870,6 +930,10 @@ footer p {
         display: grid;
         grid-template-columns: 2fr 1fr;
         background-color: white;
+    }
+
+    #book {
+        margin-right: 30px;
     }
 
     .details {
@@ -1035,14 +1099,6 @@ footer p {
 @media screen and (min-width: 1000px) {
     .title_wrap {
         padding-left: 0;
-    }
-
-    #kontakt_main {
-        padding: 0;
-    }
-
-    #omos {
-        padding: 0;
     }
 
     .om-cykel {
