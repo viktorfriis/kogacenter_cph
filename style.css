@@ -247,14 +247,11 @@ nav {
     text-transform: uppercase;
     margin-right: 30px;
     padding: 10px;
+    color: black;
 }
 
-#menu a:hover {
+s #menu a:hover {
     color: #3b95d1;
-}
-
-.aktiv {
-    color: red;
 }
 
 .drop_wrap {
@@ -381,6 +378,7 @@ h2 {
     background-color: white;
 }
 
+/*
 #splash {
     width: 100vw;
     height: 80vh;
@@ -410,6 +408,39 @@ h2 {
 .forside_cta {
     height: 70px;
     float: right;
+}
+*/
+
+#splash {
+    width: 100vw;
+    height: 80vh;
+    background-image: url(img/cykler1_sort.jpg);
+    background-position: left;
+    background-size: cover;
+    position: relative;
+}
+
+#splash_content {
+    width: 500px;
+    position: absolute;
+    left: 50px;
+    top: 180px;
+}
+
+#splash_content h1 {
+    color: white;
+    font-family: 'Oswald';
+    font-weight: 600;
+    font-size: 4rem;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.forside_cta {
+    height: 70px;
+    float: left;
 }
 
 .forside_cta h3 {
@@ -896,7 +927,7 @@ footer p {
 
 @media screen and (min-width: 850px) {
     #splash_content {
-        right: 130px;
+        left: 130px;
         top: 150px;
     }
 
