@@ -385,12 +385,15 @@ h2 {
 
 #splash {
     width: 100vw;
-    height: 70vh;
-    background-image: url(img/artofcycling.jpg);
-    background-position: 10%;
+    height: 80vh;
+    background-image: url(img/artofcycling_sort.jpg);
+    background-position: right;
     background-size: cover;
     position: relative;
 }
+
+
+
 
 .citatejer {
     text-align: right;
@@ -616,6 +619,8 @@ figcaption h3 {
     font-weight: bold;
     cursor: pointer;
 }
+
+
 
 #book {
     background-color: #dedede;
@@ -866,6 +871,35 @@ footer p {
 /***FOOTER SLUT***/
 
 @media screen and (min-width: 850px) {
+    #splash_content {
+        width: 500px;
+        position: absolute;
+        right: 130px;
+        top: 150px;
+    }
+
+    #splash_content h1 {
+        color: white;
+        font-family: 'Oswald';
+        font-weight: 600;
+        font-size: 5.5rem;
+        margin: 0;
+        text-transform: uppercase;
+        text-align: right;
+    }
+
+    .forside_cta {
+        height: 70px;
+        float: right;
+    }
+
+    .forside_cta h3 {
+        padding: 0px;
+        font-size: 2.5rem;
+        font-family: 'Oswald';
+        font-weight: 600;
+    }
+
 
     /***GENRELLE***/
     #omos {
