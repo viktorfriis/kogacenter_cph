@@ -8,7 +8,7 @@ function start() {
 async function hentHeader() {
     console.log("header");
 
-    const theHeader = await fetch("/header.html");
+    const theHeader = await fetch("header.html");
     let theFetched = await theHeader.text();
     document.querySelector("header").innerHTML = theFetched;
 
@@ -19,7 +19,7 @@ async function hentHeader() {
 async function hentFooter() {
     console.log("footer");
 
-    const theFooter = await fetch("/footer.html");
+    const theFooter = await fetch("footer.html");
     let theFetched = await theFooter.text();
     document.querySelector("footer").innerHTML = theFetched;
 
@@ -32,6 +32,11 @@ function burgerAktiv() {
     const burgerKnap = document.querySelector("#burger_knap");
     const menu = document.querySelector("#menu");
 
+    const dropdown = document.querySelector("#dropdown");
+    const dropdownLink = document.querySelector("#cykler");
+
+    const hoverEffect = document.querySelector(".hover_effect");
+
     burgerKnap.addEventListener("click", () => {
         console.log("openMenu");
 
@@ -40,4 +45,68 @@ function burgerAktiv() {
 
         menu.classList.toggle("toggle_menu"); //Selve menuen toggler klassen .toggle_menu, som åbner og lukker menuen
     })
+
+    dropdownLink.addEventListener("mouseover", () => {
+        dropdown.style.display = "grid";
+        hoverEffect.style.display = "block";
+    })
+
+    dropdown.addEventListener("mouseover", () => {
+        dropdown.style.display = "grid";
+        dropdownLink.style.color = "var(--koga-blue)";
+        hoverEffect.style.display = "block";
+    })
+
+    dropdownLink.addEventListener("mouseout", () => {
+        dropdown.style.display = "none";
+        hoverEffect.style.display = "none";
+    })
+
+    dropdown.addEventListener("mouseout", () => {
+        dropdown.style.display = "none";
+        dropdownLink.style.color = "";
+        hoverEffect.style.display = "none";
+    })
+
+    dropdownLink.addEventListener("click", () => {
+        dropdown.style.display = "grid";
+        hoverEffect.style.display = "block";
+    })
 }
+
+/*
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace("active", "");
+    }
+    dots[slideIndex - 1].className += " active";
+
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}*/

@@ -12,8 +12,6 @@
  const specTab = document.querySelector("#spec_tab");
  const specs = document.querySelector("#specs");
 
- const revTab = document.querySelector("#rev_tab");
- const rev = document.querySelector("#rev");
 
  let detail;
 
@@ -25,7 +23,6 @@
 
      descTab.addEventListener("click", openTab);
      specTab.addEventListener("click", openTab);
-     revTab.addEventListener("click", openTab);
 
      document.querySelector(".cta").addEventListener("click", openForm);
  }
@@ -34,7 +31,7 @@
      console.log("getJson");
 
      //Henter nu kun JSON data for den enkelte post jeg har klikket på
-     const url = "http://viktorkjeldal.dk/kea/2sem/kogacenter_cph/wordpress/wp-json/wp/v2/cykel/" + id;
+     const url = "https://viktorkjeldal.dk/kea/2sem/kogacenter_cph/wordpress/wp-json/wp/v2/cykel/" + id;
      const jsonData = await fetch(url);
      bike = await jsonData.json();
 
@@ -52,7 +49,16 @@
      document.querySelector(".s_model").textContent = "KOGA " + bike.model;
      document.querySelector(".s_color").textContent = "Farve: " + bike.farve;
      document.querySelector(".s_weight").textContent = "Vægt: " + bike.weight;
-     document.querySelector(".s_pris").textContent = "Pris: " + bike.pris + " DKK";
+
+     if (bike.ny_pris == "") {
+         document.querySelector(".s_pris").textContent = bike.pris + " DKK";
+         document.querySelector(".s_pris").style.textDecoration = "none";
+         document.querySelector(".s_pris").style.color = "black";
+     } else {
+         document.querySelector(".s_pris").style.fontWeight = "100";
+         document.querySelector(".s_pris").textContent = bike.pris + " DKK";
+         document.querySelector(".s_tilbud_pris").textContent = bike.ny_pris + " DKK";
+     }
 
      document.querySelector("#desc p").textContent = bike.lang_1;
      document.querySelector("#desc p+p").textContent = bike.lang_2;
@@ -65,7 +71,7 @@
      document.querySelector("#specs ul li+li+li+li+li").textContent = bike.spec_5;
      document.querySelector("#specs ul li+li+li+li+li+li").textContent = bike.spec_6;
 
-     document.querySelector(".book_link").href = "cykel.html?id=" + bike.id + "#anchor";
+     document.querySelector(".book_link").href = "cykel.html?id=" + bike.id + "#booking";
 
      document.querySelector(".check_name").textContent = "KOGA " + bike.model;
  }
@@ -75,7 +81,6 @@
 
      descTab.className = "tab_closed";
      specTab.className = "tab_closed";
-     revTab.className = "tab_closed";
 
      this.classList.add("tab_selected");
 
@@ -83,7 +88,6 @@
 
      desc.style.display = "none";
      specs.style.display = "none";
-     rev.style.display = "none";
 
      console.log(detail);
 

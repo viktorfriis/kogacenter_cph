@@ -5,25 +5,73 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kogacenter København</title>
-    <link rel="stylesheet" href="/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600i,800i&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <header></header>
+    <div class="hover_effect"></div>
     <section id="splash">
-        <figure id="baggrund">
-            <img src="/img/baggrundmedlogo.png" alt="">
-            <figure id="txt_logo">
-                <img src="/img/kogatekstlogo.png" alt="">
-            </figure>
+        <h1>The art of cycling</h1>
+    </section>
+    <section id="quote">
+        <q>Cyklerne er det bedste der kan købes for penge. Hollænderne, de kan bare det der.</q>
+        <p class="citatejer">- Tom Nielsen, Trustpilot.dk</p>
+    </section>
+    <div class="pop_wrap">
+        <section id="pop">
+            <h1>Populære modeller</h1>
+            <hr noshade>
+        </section>
+    </div>
+    <section id="why">
+        <h1>Hvorfor vælge Koga?</h1>
+        <hr noshade>
+        <figure class="tint">
+            <img src="img/forside_3.jpg" alt="livstids service">
+            <a href="om-os.html">
+                <figcaption class="tekst">
+                    <h3>Livstids service</h3>
+                </figcaption>
+            </a>
+        </figure>
+        <figure class="tint">
+            <img src="img/forside_2.jpg" alt="håndlavet i holland">
+            <a href="om-os.html">
+                <figcaption class="tekst">
+                    <h3>Håndlavet i Holland</h3>
+                </figcaption>
+            </a>
+        </figure>
+        <figure class="tint">
+            <img src="img/forside_1.jpg" alt="stellet" class="overlay">
+            <a href="om-os.html">
+                <figcaption class="tekst">
+                    <h3>Speciallavet stel</h3>
+                </figcaption>
+            </a>
         </figure>
     </section>
     <footer></footer>
+    <template>
+        <article class="bike">
+            <figure>
+                <img class="bike_img" src="" alt="">
+            </figure>
+            <h2 class="model"></h2>
+            <p class="kort"></p>
+            <p class="gammel_pris"></p>
+            <p class="ny_pris"></p>
+        </article>
+    </template>
+    <script type="text/javascript" src="javascript/forside.js"></script>
+    <script type="text/javascript" src="javascript/main.js"></script>
 
-    <script src="/javascript/main.js"></script>
+</body>
 
-</body></html>
+</html>

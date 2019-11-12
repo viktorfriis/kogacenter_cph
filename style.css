@@ -1,12 +1,9 @@
+/***GENERELLE INDSTILLINGER***/
+
 * {
     box-sizing: border-box;
     --koga-blue: #0E7DC7;
     scroll-behavior: smooth;
-}
-
-#anchor {
-    position: absolute;
-    transform: translateY(-50px);
 }
 
 body {
@@ -43,75 +40,103 @@ p {
     font-family: 'Montserrat';
 }
 
+q {
+    font-family: 'Montserrat';
+    margin-bottom: 10px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    font-weight: 200;
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.54);
+
+}
+
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+
 figure {
     margin: 0;
 }
 
 button h3 {
     margin: 0;
+    color: white;
 }
 
-/*FORSIDE*/
-#baggrund img {
-    width: 100%;
+.tab_closed h3 {
+    color: black;
 }
 
-#txt_logo img {
-    width: 250px;
+.tab_selected h3 {
+    color: white;
 }
 
-#txt_logo {
-    position: absolute;
-    top: 270px;
-    left: 30px;
+article.bike {
+    transition: 0.5s all;
+    text-align: left;
 }
 
-/* HEADER */
-.top_header {
-    width: 100vw;
-    height: 15px;
-    background-color: #005690;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+
+.om-cykel {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 40px;
 }
 
+.om-cykel p {
+    font-style: italic;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.32);
+    hyphens: auto;
+    margin-top: 6.5px;
+}
+
+.om-cykel h2 {
+    margin-bottom: 0;
+    color: black;
+    font-style: italic;
+}
+
+/***GENERELLE INDSTILLINGER SLUT***/
+
+/***HEADER***/
 .main_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: 100vw;
-    height: 65px;
-    background-color: var(--koga-blue);
-
+    height: 75px;
+    background-color: white;
 }
 
 #logo {
     display: flex;
     align-items: center;
-    height: 150px;
-    width: 200px;
+    width: 240px;
     margin-left: 30px;
 }
 
 #logo h1,
 a {
     text-align: left;
-
     font-size: 1.8rem;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 header #logo img {
-    height: 65px;
+    height: 55px;
 }
 
 nav {
     width: 100%;
     height: 100vh;
-    background-color: var(--koga-blue);
+    background-color: white;
     transition: all 0.5s ease-in-out;
     position: fixed;
     bottom: 0;
@@ -122,14 +147,15 @@ nav {
     align-items: center;
 }
 
+
 /* Den klasse der åbner burgermenuen */
 .toggle_menu {
     transform: translateX(100%);
 }
 
 #burger_knap {
-    width: 48px;
-    height: 36px;
+    width: 40px;
+    height: 30px;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
@@ -142,7 +168,7 @@ nav {
     position: absolute;
     height: 6px;
     width: 100%;
-    background-color: white;
+    background-color: black;
     border-radius: 2px;
     opacity: 1;
     left: 0;
@@ -158,7 +184,7 @@ nav {
 /* Der ligger to div'er oveni hinanden, for at animationen når man klikker på den ser naturlig ud */
 #burger_knap div:nth-child(2),
 #burger_knap div:nth-child(3) {
-    top: 15px;
+    top: 12px;
     left: 0px;
 }
 
@@ -177,13 +203,13 @@ nav {
 /* Når #burger_knap får klassen .open ved hjælp af JavaScript, roterer div nr. 2 45 grader og skifter farve */
 #burger_knap.open div:nth-child(2) {
     transform: rotate(45deg);
-    background-color: white;
+    background-color: black;
 }
 
 /* Når #burger_knap får klassen .open ved hjælp af JavaScript, roterer div nr. 3 -45 grader og skifter farve */
 #burger_knap.open div:nth-child(3) {
     transform: rotate(-45deg);
-    background-color: white;
+    background-color: black;
 }
 
 /* Når #burger_knap får klassen .open ved hjælp af JavaScript, bliver div nr. 4 usynlig */
@@ -193,9 +219,6 @@ nav {
     left: 50%;
 }
 
-
-
-/* To klasser der sørger for at burger knappen forbliver på skærmen når den åbnes */
 .pos_absolute {
     position: absolute;
 }
@@ -208,49 +231,88 @@ nav {
     flex-direction: column;
 }
 
-#menu li {
-    display: block;
-    float: left;
-    padding: 2rem;
-    position: relative;
-    text-decoration: none;
-    transition-duration: 0.5s;
+#menu {
+    display: flex;
+    flex-direction: column;
 }
 
-#menu li a {
-    color: white;
-    font-family: sans-serif;
-    font-size: 2rem;
+#menu a {
+    font-size: 1.8rem;
+    font-family: 'Oswald';
+    letter-spacing: 1px;
+    font-weight: 600;
     text-transform: uppercase;
+    margin-right: 30px;
+    padding: 10px;
 }
 
-#menu li:hover {
+#menu a:hover {
+    color: var(--koga-blue);
+}
+
+.drop_wrap {
+    position: relative;
+}
+
+.drop_wrap a {
+    padding-bottom: 20px;
+}
+
+#dropdown {
+    width: 100vw;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    z-index: 130;
+    background-color: white;
+    padding: 0;
+    display: none;
+    grid-template-columns: 1fr auto 1fr auto;
+    align-items: center;
+    justify-items: center;
+}
+
+#dropdown hr {
+    height: 100px;
+    border: .5px solid grey;
+}
+
+#dropdown a {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown_h2 {
+    color: black;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+#dropdown:hover {
+    display: grid;
+}
+
+#dropdown img {
+    width: 180px;
+    padding-top: 10px;
+}
+
+.dropdown_elm {
     cursor: pointer;
 }
 
-.dropdown {
-    min-width: 5rem;
+.dropdown_elm:hover .dropdown_h2 {
+    color: var(--koga-blue);
+}
+
+.hover_effect {
+    background-color: black;
     position: absolute;
-    visibility: hidden;
-    margin-top: 1rem;
-    left: 0;
-    z-index: 130;
-}
-
-#menu ul li ul li {
-    width: 100%;
-    z-index: 130;
-}
-
-.drop_btn:hover > .dropdown {
-    position: relative;
-    visibility: visible;
-}
-
-.top_header p {
-    color: white;
-    font-size: 1.2rem;
-    margin: 0 30px 0 0;
+    width: 100vw;
+    height: 3000px;
+    z-index: 10;
+    opacity: 0.5;
+    display: none;
 }
 
 .details p,
@@ -274,7 +336,199 @@ h2 {
     padding-left: 20px;
 }
 
-/* CYKLER I LISTE VISNING */
+.title {
+    width: 100vw;
+    height: 80px;
+    color: var(--koga-blue);
+}
+
+.title_wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.title hr {
+    width: 68%;
+    height: 2px;
+    background-color: rgba(14, 124, 215, 0.6);
+    border: none;
+    margin-bottom: 20px;
+}
+
+.title h1 {
+    text-transform: uppercase;
+}
+
+/*.small_width {
+    max-width: 800px;
+}*/
+
+/***HEADER SLUT***/
+
+/***FORSIDE***/
+
+#splash {
+    width: 100vw;
+    height: 60vh;
+    background-image: url(img/baggrundmedlogo.png);
+    background-position: right;
+    background-size: cover;
+    position: relative;
+}
+
+#splash h1 {
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+    font-style: italic;
+    left: 100px;
+    top: 100px;
+}
+
+.citatejer {
+    text-align: right;
+    font-family: 'Montserrat';
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 200;
+    font-size: 1.9rem;
+    color: rgba(0, 0, 0, 0.32);
+
+}
+
+#quote {
+    padding: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#baggrund img {
+    width: 100%;
+}
+
+#txt_logo img {
+    width: 250px;
+}
+
+#txt_logo {
+    position: absolute;
+    top: 150px;
+    left: 30px;
+}
+
+#pop {
+    padding: 30px;
+}
+
+#pop .bike {
+    background-color: white;
+    margin: 30px 0;
+    padding: 20px;
+}
+
+#pop,
+#why h1 {
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#pop hr,
+#why hr {
+    width: 55.5%;
+    height: 2px;
+    background-color: var(--koga-blue);
+    border: none;
+    margin-bottom: 20px;
+}
+
+figcaption h3 {
+    color: white;
+}
+
+
+#pop article.bike:hover {
+    transform: scale(1.05);
+}
+
+.pop_wrap {
+    width: 100vw;
+    background-color: rgba(191, 191, 191, 0.3);
+}
+
+#why {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+#why h1 {
+    grid-column: 1/4;
+}
+
+#why hr {
+    grid-column: 1/4;
+    width: 50%;
+    height: 2px;
+}
+
+#why figure {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100%;
+}
+
+#why figcaption {
+    position: absolute;
+    text-align: center;
+    bottom: 10%;
+    font-size: 1.8rem;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    width: 100%;
+}
+
+#why .tekst {
+    transition: 0.5s all;
+}
+
+#why .tekst:hover {
+    background-color: rgba(14, 125, 199, 0.83);
+}
+
+#why figure img {
+    width: 100%;
+}
+
+
+.tint {
+    position: relative;
+    float: left;
+}
+
+.tint:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--koga-blue);
+    opacity: 0.4;
+}
+
+/***FORSIDE SLUT***/
+
+/***CYKLER I LISTE VISNING***/
+
 .bikes {
     display: grid;
     grid-template-columns: 1fr;
@@ -301,7 +555,24 @@ h2 {
     margin: 5px 0;
 }
 
-/* CYKLER I SINGLE VIEW */
+.gammel_pris {
+    text-decoration: line-through;
+    color: grey;
+    margin-bottom: 5px;
+    display: inline;
+    font-weight: bold;
+}
+
+.ny_pris {
+    font-weight: bold;
+    margin-top: 0;
+    display: inline;
+    margin-left: 10px;
+}
+
+/***CYKLER I LISTE VISNING SLUT***/
+
+/***CYKLER I SINGLE VIEW***/
 .single_bike {
     width: 90vw;
     margin: 0 auto;
@@ -309,6 +580,17 @@ h2 {
 
 .s_bike_img {
     width: 100%;
+}
+
+.s_pris {
+    text-decoration: line-through;
+    color: grey;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.s_tilbud_pris {
+    margin-top: 0;
 }
 
 .cta {
@@ -450,7 +732,22 @@ textarea {
     outline: none;
 }
 
-/*OM OS*/
+#booking {
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+}
+
+/***CYKLER I SINGLE VIEW SLUT***/
+
+/***OM OS***/
+
+#omos {
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 30px;
+}
 
 #omos h2 {
     font-size: 2rem;
@@ -461,7 +758,32 @@ textarea {
     color: black;
 }
 
-/*FOOTER*/
+#omos p {
+    line-height: 1.5;
+    margin-top: -2px;
+}
+
+#kogacenter img {
+    width: 100%;
+}
+
+/***OM OS SLUT***/
+
+/***KONTAKT***/
+
+#kontakt {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#kontakt h2 {
+    color: black;
+}
+
+/***KONTAKT SLUT***/
+
+/***FOOTER***/
 
 .googlemaps iframe {
     width: 100vw;
@@ -479,6 +801,16 @@ textarea {
     padding: 30px 0px 30px 70px;
 }
 
+footer a:hover {
+    background-color: #0E7DC7;
+    color: white;
+}
+
+footer a {
+    color: var(--koga-blue);
+    font-size: 1.2rem;
+}
+
 footer h2 {
     color: var(--koga-blue);
     font-size: 1.4rem;
@@ -488,102 +820,38 @@ footer h2 {
 footer p {
     color: var(--koga-blue);
     font-size: 1.2rem;
+    line-height: 1.5;
 }
 
-/*FOOTER SLUT*/
+/***FOOTER SLUT***/
 
 @media screen and (min-width: 850px) {
 
-    /* NAVIGATION */
-    nav {
-        background-color: transparent;
-        position: relative;
-        justify-content: flex-end;
-        align-items: flex-end;
-        align-self: flex-end;
+    /***GENRELLE***/
+
+    #kogacenter {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
     }
 
-    #burger_knap {
-        /* Skjuler burger knappen */
-        display: none;
+    #kogacenter h2 {
+        grid-column: 1/3;
     }
 
-    .toggle_menu {
-        /* Sørger for at menuen er synlig hele tiden */
-        transform: translateX(0);
+    #kogacenter img {
+        padding: 0 0 0 30px;
     }
 
-
-    .navigation {
-        list-style: none;
-        margin: 0 30px 0 0;
-        padding-left: 0;
-        display: flex;
-        flex-direction: row;
+    .om-cykel {
+        padding-left: 0px;
     }
 
-    #menu li {
-        display: block;
-        float: left;
-        padding: 2rem;
-        position: relative;
-        text-decoration: none;
-        transition-duration: 0.5s;
+    .om-cykel p {
+        hyphens: none;
     }
-
-    #menu li a {
-        color: white;
-        font-family: sans-serif;
-        font-size: 2rem;
-        text-transform: uppercase;
-    }
-
-    #menu li:hover {
-        cursor: pointer;
-    }
-
-    #menu li a:hover {
-        color: #c1e5fd;
-    }
-
-    .dropdown {
-        width: 220px;
-        position: absolute;
-        visibility: hidden;
-        margin-top: 20px;
-        left: 0;
-        z-index: 130;
-        background-color: var(--koga-blue);
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-    }
-
-    #menu ul li ul li {
-        width: 100%;
-        z-index: 130;
-
-    }
-
-    .drop_btn:hover > .dropdown {
-        position: absolute;
-        visibility: visible;
-    }
-
-    /* FORSIDE */
-    #txt_logo img {
-        width: 450px;
-    }
-
-    #txt_logo {
-        position: absolute;
-        top: 300px;
-        left: 50px;
-    }
-
 
     .bikes {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         max-width: 1000px;
         margin: 0 auto;
     }
@@ -603,6 +871,148 @@ footer p {
         margin-top: 50px;
     }
 
+    .title hr {
+        width: 35%;
+    }
+
+
+    /***GENRELLE SLUT***/
+
+    /***NAVIGATION***/
+    nav {
+        background-color: transparent;
+        position: relative;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-self: flex-end;
+    }
+
+    #burger_knap {
+        /* Skjuler burger knappen */
+        display: none;
+    }
+
+    .toggle_menu {
+        /* Sørger for at menuen er synlig hele tiden */
+        transform: translateX(0);
+    }
+
+    #menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .drop_wrap {
+        position: relative;
+    }
+
+    .drop_wrap a {
+        padding-bottom: 20px;
+    }
+
+    #dropdown {
+        width: 700px;
+        position: absolute;
+        bottom: -159px;
+        right: -280px;
+        z-index: 130;
+        background-color: white;
+        padding: 0;
+        display: none;
+        grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+
+    #dropdown hr {
+        height: 40px;
+        border: .5px solid var(--koga-blue);
+    }
+
+    .dropdown_elm:hover .dropdown_h2 {
+        color: var(--koga-blue);
+    }
+
+    #dropdown a {
+        margin: 0;
+        padding: 0;
+    }
+
+    #dropdown:hover {
+        display: grid;
+    }
+
+    #dropdown img {
+        width: 150px;
+        padding-top: 10px;
+    }
+
+    .dropdown_h2 {
+        color: black;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /***NAVIGATION SLUT***/
+
+    /***FORSIDE***/
+
+    #txt_logo img {
+        width: 450px;
+    }
+
+    #txt_logo {
+        position: absolute;
+        top: 200px;
+        left: 50px;
+    }
+
+    #pop {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        max-width: 1000px;
+        margin: 0 auto;
+        grid-gap: 20px;
+    }
+
+    #pop img {
+        width: 100%;
+    }
+
+    #pop h1 {
+        grid-column: 1/4;
+    }
+
+    #pop hr {
+        grid-column: 1/4;
+        width: 50%;
+        height: 2px;
+    }
+
+    #pop .bike {
+        margin-bottom: 50px;
+        min-width: 300px;
+    }
+
+    #why h3 {
+        font-size: 3rem;
+
+    }
+
+    #quote {
+        text-align: center;
+    }
+
+    .citatejer {
+        margin-right: 18%;
+    }
+
+
+
+    /***FORSIDE SLUT***/
+
+    /***FOOTER***/
+
     .footer_wrapper {
         grid-template-columns: repeat(5, auto);
         max-width: 1200px;
@@ -610,4 +1020,22 @@ footer p {
         justify-items: center;
         padding: 30px;
     }
+
+    /***FOOTER SLUT***/
+
+}
+
+@media screen and (min-width: 1000px) {
+    .title_wrap {
+        padding-left: 0;
+    }
+
+    #kontakt {
+        padding: 0;
+    }
+
+    #omos {
+        padding: 0;
+    }
+
 }
