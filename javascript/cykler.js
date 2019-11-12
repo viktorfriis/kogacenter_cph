@@ -11,6 +11,11 @@
 
   function start() {
       getJson();
+      sortClickable();
+  }
+
+  function sortClickable() {
+      document.querySelector("#sorter").addEventListener("change", sorter);
   }
 
   async function getJson() {
@@ -26,10 +31,12 @@
 
       console.log(bikes);
       showBikes();
+
   }
 
   function showBikes() {
       console.log("SHOWBIKES");
+      dest.innerHTML = "";
       //For hvert array objekt skriver jeg dataen ind i en template
       bikes.forEach(bike => {
 
@@ -50,7 +57,6 @@
               klon.querySelector(".ny_pris").textContent = bike.ny_pris + " DKK";
           }
 
-
           //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
           //De bliver sendt videre med deres ID, som er defineret i JSON filen
           klon.querySelector(".bike").addEventListener("click", () => {
@@ -61,4 +67,55 @@
           dest.appendChild(klon);
 
       })
+  }
+
+  function sorter() {
+      console.log("sorter");
+      if (this.value === "alpha") {
+          sortAlpha();
+      } else if (this.value === "priceDown") {
+          sortPriceDown();
+      } else if (this.value === "priceUp") {
+          sortPriceUp();
+      }
+  }
+
+
+  function sortAlpha() {
+      console.log("Sort alphabetically")
+      bikes.sort((a, b) => {
+          if (a.model > b.model) {
+              return 1
+          } else {
+              return -1
+          }
+      })
+
+      showBikes();
+  }
+
+  function sortPriceDown() {
+      console.log("Sort price down");
+      bikes.sort((a, b) => {
+          if (a.pris < b.pris) {
+              return 1
+          } else {
+              return -1
+          }
+      })
+
+      showBikes();
+  }
+
+  function sortPriceUp() {
+      console.log("Sort price up");
+      bikes.sort((a, b) => {
+          if (a.pris > b.pris) {
+              return 1
+          } else {
+              return -1
+          }
+      })
+
+      showBikes();
   }

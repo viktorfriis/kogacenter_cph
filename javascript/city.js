@@ -11,12 +11,16 @@
 
   function start() {
       getJson();
+      sortClickable();
   }
 
+  function sortClickable() {
+      document.querySelector("#sorter").addEventListener("change", sorter);
+  }
   async function getJson() {
       console.log("getJson");
 
-      const url = "https://viktorkjeldal.dk/kea/2sem/kogacenter_cph/wordpress/wp-json/wp/v2/cykel";
+      const url = "https://viktorkjeldal.dk/kea/2sem/kogacenter_cph/wordpress/wp-json/wp/v2/cykel?per_page=100";
 
       //Henter data i filen som er defineret ovenfor
       const jsonData = await fetch(url);
@@ -30,6 +34,7 @@
 
   function showBikes() {
       console.log("SHOWBIKES");
+      dest.innerHTML = "";
       //For hvert array objekt skriver jeg dataen ind i en template
       bikes.forEach(bike => {
           if (bike.kategori == "City & Touring") {
@@ -61,4 +66,55 @@
               dest.appendChild(klon);
           }
       })
+  }
+
+  function sorter() {
+      console.log("sorter");
+      if (this.value === "alpha") {
+          sortAlpha();
+      } else if (this.value === "priceDown") {
+          sortPriceDown();
+      } else if (this.value === "priceUp") {
+          sortPriceUp();
+      }
+  }
+
+
+  function sortAlpha() {
+      console.log("Sort alphabetically")
+      bikes.sort((a, b) => {
+          if (a.model > b.model) {
+              return 1
+          } else {
+              return -1
+          }
+      })
+
+      showBikes();
+  }
+
+  function sortPriceDown() {
+      console.log("Sort price down");
+      bikes.sort((a, b) => {
+          if (a.pris < b.pris) {
+              return 1
+          } else {
+              return -1
+          }
+      })
+
+      showBikes();
+  }
+
+  function sortPriceUp() {
+      console.log("Sort price up");
+      bikes.sort((a, b) => {
+          if (a.pris > b.pris) {
+              return 1
+          } else {
+              return -1
+          }
+      })
+
+      showBikes();
   }

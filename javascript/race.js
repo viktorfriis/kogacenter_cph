@@ -11,8 +11,12 @@
 
   function start() {
       getJson();
+      sortClickable();
   }
 
+  function sortClickable() {
+      document.querySelector("#sorter").addEventListener("change", sorter);
+  }
   async function getJson() {
       console.log("getJson");
 
@@ -30,6 +34,7 @@
 
   function showBikes() {
       console.log("SHOWBIKES");
+      dest.innerHTML = "";
       //For hvert array objekt skriver jeg dataen ind i en template
       bikes.forEach(bike => {
           if (bike.kategori == "Race") {
@@ -62,4 +67,55 @@
               dest.appendChild(klon);
           }
       })
+  }
+
+  function sorter() {
+      console.log("sorter");
+      if (this.value === "alpha") {
+          sortAlpha();
+      } else if (this.value === "priceDown") {
+          sortPriceDown();
+      } else if (this.value === "priceUp") {
+          sortPriceUp();
+      }
+  }
+
+
+  function sortAlpha() {
+      console.log("Sort alphabetically")
+      bikes.sort((a, b) => {
+          if (a.model > b.model) {
+              return 1
+          } else {
+              return -1
+          }
+      })
+
+      showBikes();
+  }
+
+  function sortPriceDown() {
+      console.log("Sort price down");
+      bikes.sort((a, b) => {
+          if (a.pris < b.pris) {
+              return 1
+          } else {
+              return -1
+          }
+      })
+
+      showBikes();
+  }
+
+  function sortPriceUp() {
+      console.log("Sort price up");
+      bikes.sort((a, b) => {
+          if (a.pris > b.pris) {
+              return 1
+          } else {
+              return -1
+          }
+      })
+
+      showBikes();
   }

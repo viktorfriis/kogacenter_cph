@@ -250,7 +250,7 @@ nav {
     color: black;
 }
 
-s #menu a:hover {
+#menu a:hover {
     color: #3b95d1;
 }
 
@@ -491,7 +491,7 @@ h2 {
     padding: 20px;
 }
 
-#pop,
+#pop h1,
 #why h1 {
     color: black;
     text-transform: uppercase;
@@ -590,6 +590,20 @@ figcaption h3 {
 /***FORSIDE SLUT***/
 
 /***CYKLER I LISTE VISNING***/
+#sorter {
+    display: inline;
+    width: 150px;
+}
+
+#sorter_wrap p {
+    display: inline;
+}
+
+#sorter_wrap {
+    padding: 0 30px 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
 .bikes {
     display: grid;
@@ -941,6 +955,10 @@ footer p {
 
     .forside_cta h3 {
         font-size: 2.5rem;
+    }
+
+    #sorter_wrap {
+        padding: 0 0 30px 0;
     }
 
 
