@@ -1,5 +1,13 @@
 window.addEventListener("DOMContentLoaded", start);
 
+const urlParamsPage = new URLSearchParams(window.location.search);
+const page = urlParamsPage.get("page");
+
+console.log(page);
+
+document.querySelector("#" + page).style.color = "var(--koga-blue)";
+
+
 function start() {
     hentHeader();
     hentFooter();
@@ -12,22 +20,21 @@ async function hentHeader() {
     let theFetched = await theHeader.text();
     document.querySelector("header").innerHTML = theFetched;
 
-    console.log("header hentet");
     burgerAktiv();
 }
 
 async function hentFooter() {
-    console.log("footer");
+    //    console.log("footer");
 
     const theFooter = await fetch("footer.html");
     let theFetched = await theFooter.text();
     document.querySelector("footer").innerHTML = theFetched;
 
-    console.log("footer hentet");
+    //    console.log("footer hentet");
 }
 
 function burgerAktiv() {
-    console.log("Burger aktiv");
+    //    console.log("Burger aktiv");
 
     const burgerKnap = document.querySelector("#burger_knap");
     const menu = document.querySelector("#menu");
@@ -53,7 +60,7 @@ function burgerAktiv() {
 
     dropdown.addEventListener("mouseover", () => {
         dropdown.style.display = "grid";
-        dropdownLink.style.color = "var(--koga-blue)";
+        dropdownLink.style.color = "#3b95d1";
         hoverEffect.style.display = "block";
     })
 
@@ -72,6 +79,10 @@ function burgerAktiv() {
         dropdown.style.display = "grid";
         hoverEffect.style.display = "block";
     })
+
+    if (page == "trekking" || page == "race" || page == "e-bikes" || page == "city") {
+        dropdownLink.style.color = "#3b95d1";
+    }
 }
 
 /*

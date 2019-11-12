@@ -8,6 +8,7 @@
 
 body {
     margin: 0;
+    background-color: rgba(191, 191, 191, 0.22);
 }
 
 html {
@@ -91,7 +92,7 @@ article.bike {
 .om-cykel p {
     font-style: italic;
     line-height: 1.4;
-    color: rgba(0, 0, 0, 0.32);
+    color: rgba(0, 0, 0, 0.9);
     hyphens: auto;
     margin-top: 6.5px;
 }
@@ -111,7 +112,8 @@ article.bike {
     justify-content: space-between;
     width: 100vw;
     height: 75px;
-    background-color: white;
+    background-color: black;
+    border-bottom: 1px solid var(--koga-blue);
 }
 
 #logo {
@@ -126,7 +128,7 @@ a {
     text-align: left;
     font-size: 1.8rem;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 header #logo img {
@@ -168,8 +170,8 @@ nav {
     position: absolute;
     height: 6px;
     width: 100%;
-    background-color: black;
-    border-radius: 2px;
+    background-color: white;
+    border-radius: 1px;
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
@@ -247,7 +249,11 @@ nav {
 }
 
 #menu a:hover {
-    color: var(--koga-blue);
+    color: #3b95d1;
+}
+
+.aktiv {
+    color: red;
 }
 
 .drop_wrap {
@@ -302,7 +308,7 @@ nav {
 }
 
 .dropdown_elm:hover .dropdown_h2 {
-    color: var(--koga-blue);
+    color: var(--koga-rgb(61, 61, 255));
 }
 
 .hover_effect {
@@ -339,7 +345,6 @@ h2 {
 .title {
     width: 100vw;
     height: 80px;
-    color: var(--koga-blue);
 }
 
 .title_wrap {
@@ -347,7 +352,6 @@ h2 {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    padding-left: 30px;
 }
 
 .title hr {
@@ -369,6 +373,10 @@ h2 {
 /***HEADER SLUT***/
 
 /***FORSIDE***/
+
+#forside_body {
+    background-color: white;
+}
 
 #splash {
     width: 100vw;
@@ -423,7 +431,7 @@ h2 {
     padding: 30px;
 }
 
-#pop .bike {
+.bike {
     background-color: white;
     margin: 30px 0;
     padding: 20px;
@@ -452,7 +460,7 @@ figcaption h3 {
 
 
 #pop article.bike:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .pop_wrap {
@@ -771,13 +779,13 @@ textarea {
 
 /***KONTAKT***/
 
-#kontakt {
+#kontakt_main {
     padding: 30px;
     max-width: 800px;
     margin: 0 auto;
 }
 
-#kontakt h2 {
+#kontakt_main h2 {
     color: black;
 }
 
@@ -843,7 +851,7 @@ footer p {
     }
 
     .om-cykel {
-        padding-left: 0px;
+        padding-left: 30px;
     }
 
     .om-cykel p {
@@ -861,10 +869,12 @@ footer p {
         margin: 0 auto;
         display: grid;
         grid-template-columns: 2fr 1fr;
+        background-color: white;
     }
 
     .details {
-        grid-column: 1/3;
+        grid-column: 1/2;
+        padding: 0 30px;
     }
 
     .s_model {
@@ -938,9 +948,7 @@ footer p {
         padding: 0;
     }
 
-    #dropdown:hover {
-        display: grid;
-    }
+
 
     #dropdown img {
         width: 150px;
@@ -989,9 +997,9 @@ footer p {
         height: 2px;
     }
 
-    #pop .bike {
+    .bike {
         margin-bottom: 50px;
-        min-width: 300px;
+        min-width: 200px;
     }
 
     #why h3 {
@@ -1014,8 +1022,7 @@ footer p {
     /***FOOTER***/
 
     .footer_wrapper {
-        grid-template-columns: repeat(5, auto);
-        max-width: 1200px;
+        grid-template-columns: repeat(4, auto);
         margin: 0 auto;
         justify-items: center;
         padding: 30px;
@@ -1030,12 +1037,16 @@ footer p {
         padding-left: 0;
     }
 
-    #kontakt {
+    #kontakt_main {
         padding: 0;
     }
 
     #omos {
         padding: 0;
+    }
+
+    .om-cykel {
+        padding-left: 0px;
     }
 
 }
