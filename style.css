@@ -114,7 +114,7 @@ article.bike {
     width: 100vw;
     height: 75px;
     background-color: black;
-    border-bottom: 1px solid var(--koga-blue);
+    border-bottom: 2px solid var(--koga-blue);
 }
 
 #logo {
@@ -385,20 +385,11 @@ h2 {
 
 #splash {
     width: 100vw;
-    height: 60vh;
-    background-image: url(img/baggrundmedlogo.png);
-    background-position: right;
+    height: 70vh;
+    background-image: url(img/artofcycling.jpg);
+    background-position: 10%;
     background-size: cover;
     position: relative;
-}
-
-#splash h1 {
-    position: absolute;
-    color: white;
-    text-transform: uppercase;
-    font-style: italic;
-    left: 100px;
-    top: 100px;
 }
 
 .citatejer {
