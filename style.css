@@ -78,6 +78,7 @@ button h3 {
 article.bike {
     transition: 0.5s all;
     text-align: left;
+    margin: 0;
 }
 
 
@@ -345,6 +346,8 @@ h2 {
 .title {
     width: 100vw;
     height: 80px;
+    margin-bottom: 20px;
+
 
 }
 
@@ -366,16 +369,11 @@ h2 {
     height: 2px;
     background-color: rgba(14, 124, 215, 0.6);
     border: none;
-    margin-bottom: 20px;
 }
 
 .title h1 {
     text-transform: uppercase;
 }
-
-/*.small_width {
-    max-width: 800px;
-}*/
 
 /***HEADER SLUT***/
 
@@ -550,6 +548,7 @@ figcaption h3 {
     grid-gap: 20px;
     width: 90vw;
     margin: 0 auto;
+    padding-bottom: 30px;
 }
 
 .bike {
@@ -870,6 +869,7 @@ footer p {
     color: var(--koga-blue);
     font-size: 1.2rem;
     line-height: 1.5;
+    margin: 0;
 }
 
 /***FOOTER SLUT***/
