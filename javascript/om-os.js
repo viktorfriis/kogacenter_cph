@@ -27,4 +27,6 @@
 
       document.querySelector("#tekst_1").textContent = information.tekst_1;
       document.querySelector("#tekst_2").textContent = information.tekst_2;
+      document.querySelector("#tekst_3").textContent = information.tekst_3;
+      document.querySelector("#tekst_4").textContent = information.tekst_4;
   }
