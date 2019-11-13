@@ -2,10 +2,13 @@ window.addEventListener("DOMContentLoaded", start);
 const urlParamsPage = new URLSearchParams(window.location.search);
 const page = urlParamsPage.get("page");
 
+const searchBar = document.querySelector("#search_bar");
+
 
 function start() {
     hentHeader();
     hentFooter();
+    search();
 }
 
 async function hentHeader() {
@@ -22,8 +25,6 @@ async function hentHeader() {
 
 function styleLink() {
     document.querySelector("#" + page).style.color = "var(--koga-blue)";
-
-
 }
 
 async function hentFooter() {
@@ -86,6 +87,43 @@ function burgerAktiv() {
     if (page == "trekking" || page == "race" || page == "e-bikes" || page == "city") {
         dropdownLink.style.color = "#3b95d1";
     }
+}
+
+function search() {
+    document.querySelector("#no_results").style.display = "none";
+    searchBar.addEventListener("keyup", function (search) {
+        console.log("key up");
+
+        const searchValue = search.target.value.toLowerCase();
+        const cykler = document.querySelectorAll(".bike");
+
+        let counter = 0;
+        let numBikes = cykler.length;
+
+        Array.from(cykler).forEach(cykel => {
+            const title = cykel.querySelector("h2").firstChild.textContent;
+
+            if (title.toLowerCase().indexOf(searchValue) != -1) {
+                cykel.style.display = "block";
+
+            } else {
+                cykel.style.display = "none";
+            }
+
+            if (cykel.style.display == "none") {
+                counter++;
+
+            }
+
+        })
+
+        if (counter < numBikes) {
+            document.querySelector("#no_results").style.display = "none";
+
+        } else {
+            document.querySelector("#no_results").style.display = "block";
+        }
+    })
 }
 
 /*
