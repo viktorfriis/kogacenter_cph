@@ -28,13 +28,21 @@
             <p> Udvikling af racecykler i top kvalitet er indlejret i Kogas DNA. Lidenskab til cykling var grundlaget for etableringen af virksomheden i 1974 og er det umiskendelige grundlag for dens moderne og avancerede racersamling indtil i dag. Udviklet og bygget i Holland, af og for cykelentusiaster med sans for detaljer.</p>
         </article>
         <article id="sorter_wrap">
-            <p>Sorter efter: </p>
-            <select id="sorter">
-                <option value="">-</option>
-                <option id="alpha" value="alpha">Alfabetisk (A-Å)</option>
-                <option id="price_down" value="priceUp">Pris (lav-høj)</option>
-                <option id="price_up" value="priceDown">Pris (høj-lav)</option>
-            </select>
+            <div>
+                <input id="search_bar" placeholder="Søg cykler her" type="text">
+                <div id="search_icon">
+                    <img src="img/search.svg" alt="søge ikon">
+                </div>
+            </div>
+            <div>
+                <p>Sorter efter: </p>
+                <select id="sorter">
+                    <option value="">-</option>
+                    <option id="alpha" value="alpha">Alfabetisk (A-Å)</option>
+                    <option id="price_down" value="priceUp">Pris (lav-høj)</option>
+                    <option id="price_up" value="priceDown">Pris (høj-lav)</option>
+                </select>
+            </div>
         </article>
         <section class="bikes">
         </section>

@@ -7,16 +7,16 @@
     //Definerer templaten hvor som hver øl post skal følge
     const temp = document.querySelector("template");
 
+    const searchBar = document.querySelector("#search_bar");
+
     document.addEventListener("DOMContentLoaded", start);
 
     function start() {
         getJson();
-        sortClickable();
+        search();
     }
 
-    function sortClickable() {
-        document.querySelector("#sorter").addEventListener("change", sorter);
-    }
+
     async function getJson() {
         console.log("getJson");
 
@@ -66,10 +66,39 @@
                 dest.appendChild(klon);
             }
         })
+
+        document.querySelector("#sorter").addEventListener("change", sorter);
+    }
+
+
+    function search() {
+        searchBar.addEventListener("keyup", function (e) {
+            console.log("key up");
+
+            const term = e.target.value.toLowerCase();
+            const eachBike = document.querySelectorAll(".bike");
+            const cykler = document.querySelectorAll(".bike");
+            console.log(cykler);
+
+            Array.from(cykler).forEach(cykel => {
+                console.log(cykler);
+                console.log("for each");
+                const title = cykel.querySelector("h2").firstChild.textContent;
+
+                if (title.toLowerCase().indexOf(term) != -1) {
+                    cykel.style.display = "block";
+
+                } else {
+                    cykel.style.display = "none";
+
+                }
+            })
+        })
     }
 
     function sorter() {
         console.log("sorter");
+        searchBar.value = "";
         if (this.value === "alpha") {
             sortAlpha();
         } else if (this.value === "priceDown") {
