@@ -414,7 +414,7 @@ h2 {
 #splash {
     width: 100vw;
     height: 80vh;
-    background-image: url(img/cykler1_sort.jpg);
+    background-image: url(img/cykler1_sort1.jpg);
     background-position: left;
     background-size: cover;
     position: relative;
@@ -567,24 +567,6 @@ figcaption h3 {
 
 #why figure img {
     width: 100%;
-}
-
-
-.tint {
-    position: relative;
-    float: left;
-}
-
-.tint:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--koga-blue);
-    opacity: 0.4;
 }
 
 /***FORSIDE SLUT***/
