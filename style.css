@@ -414,7 +414,7 @@ h2 {
 #splash {
     width: 100vw;
     height: 80vh;
-    background-image: url(img/cykler1_sort.jpg);
+    background-image: url(img/cykler1_sort1.jpg);
     background-position: left;
     background-size: cover;
     position: relative;
@@ -569,40 +569,51 @@ figcaption h3 {
     width: 100%;
 }
 
-
-.tint {
-    position: relative;
-    float: left;
-}
-
-.tint:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--koga-blue);
-    opacity: 0.4;
-}
-
 /***FORSIDE SLUT***/
 
 /***CYKLER I LISTE VISNING***/
-#sorter {
-    display: inline;
-    width: 150px;
-}
-
-#sorter_wrap p {
-    display: inline;
-}
-
 #sorter_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     padding: 0 30px 30px;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+#sorter {
+    width: 150px;
+    margin-left: 10px;
+}
+
+#sorter_wrap div {
+    display: flex;
+    align-items: center;
+}
+
+#sorter_wrap p {
+    font-size: 1.4rem;
+}
+
+#search_bar {
+    display: inline;
+    height: 40px;
+    width: 203px;
+    border: none;
+    padding: 10px;
+    font-size: 1.4rem;
+    font-family: 'Montserrat';
+}
+
+#search_icon {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+}
+
+#search_icon img {
+    width: 100%;
+    padding: 9px;
 }
 
 .bikes {
@@ -957,10 +968,6 @@ footer p {
         font-size: 2.5rem;
     }
 
-    #sorter_wrap {
-        padding: 0 0 30px 0;
-    }
-
 
     /***GENRELLE***/
     #omos {
@@ -1193,6 +1200,10 @@ footer p {
 
     .om-cykel {
         padding-left: 0px;
+    }
+
+    #sorter_wrap {
+        padding-right: 0;
     }
 
 }
