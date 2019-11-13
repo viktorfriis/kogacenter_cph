@@ -21,8 +21,6 @@ async function hentHeader() {
 }
 
 function styleLink() {
-    console.log(page);
-
     document.querySelector("#" + page).style.color = "var(--koga-blue)";
 
 

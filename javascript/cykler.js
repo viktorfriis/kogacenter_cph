@@ -31,7 +31,6 @@
 
       console.log(bikes);
       showBikes();
-
   }
 
   function showBikes() {
@@ -75,12 +74,12 @@
   }
 
   function search() {
-      searchBar.addEventListener("keyup", function (e) {
+      searchBar.addEventListener("keyup", function (search) {
           console.log("key up");
 
-          const term = e.target.value.toLowerCase();
-          const eachBike = document.querySelectorAll(".bike");
+          const searchValue = search.target.value.toLowerCase();
           const cykler = document.querySelectorAll(".bike");
+
           console.log(cykler);
 
           Array.from(cykler).forEach(cykel => {
@@ -88,12 +87,11 @@
               console.log("for each");
               const title = cykel.querySelector("h2").firstChild.textContent;
 
-              if (title.toLowerCase().indexOf(term) != -1) {
+              if (title.toLowerCase().indexOf(searchValue) != -1) {
                   cykel.style.display = "block";
 
               } else {
                   cykel.style.display = "none";
-
               }
           })
       })
