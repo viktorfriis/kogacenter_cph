@@ -546,17 +546,36 @@ figcaption h3 {
 /***CYKLER I LISTE VISNING***/
 #sorter_wrap {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
     padding: 0 30px 30px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-#sorter {
-    width: 150px;
-    margin-left: 10px;
+.filtrer {
+    flex-basis: 300px;
+    flex-grow: 1;
 }
+
+.filtrer p {
+    margin-right: 6px;
+}
+
+.filtrer_search {
+    flex-basis: 300px;
+    flex-grow: 1;
+}
+
+#sorter {
+    width: 27%;
+    margin-right: 5px;
+}
+
+#kategori_sorter {
+    width: 27%;
+}
+
 
 #sorter_wrap div {
     display: flex;
@@ -575,6 +594,8 @@ figcaption h3 {
     padding: 10px;
     font-size: 1.4rem;
     font-family: 'Montserrat';
+    flex-basis: 20px;
+    flex-grow: 1;
 }
 
 #search_icon {
@@ -1073,6 +1094,34 @@ footer p {
 
     .title hr {
         width: 35%;
+    }
+
+    #sorter_wrap {
+        padding: 30px 0;
+    }
+
+    .filtrer {
+        justify-content: space-between;
+        padding: 0;
+        flex-basis: 600px;
+    }
+
+    .filtrer_search {
+        flex-basis: 245px;
+    }
+
+    .filtrer p {
+        margin-left: 20px;
+        margin-right: 0px;
+
+    }
+
+    #sorter {
+        width: 30%;
+    }
+
+    #kategori_sorter {
+        width: 30%;
     }
 
 
