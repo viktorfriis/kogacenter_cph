@@ -1,6 +1,8 @@
   //Definerer variablen hvor alle vores posts kommer ind i et array
   let bikes = [];
 
+  let kategori = "alle";
+
   //Definerer destinationen hvor hver article skal sættes ind
   const dest = document.querySelector(".bikes");
 
@@ -38,34 +40,38 @@
       //For hvert array objekt skriver jeg dataen ind i en template
       bikes.forEach(bike => {
 
-          const klon = temp.cloneNode(true).content;
+          if (kategori == "alle" || kategori == bike.kategori) {
 
-          klon.querySelector(".bike_img").src = bike.billede.guid;
-          klon.querySelector(".bike_img").alt = bike.alt_tag;
-          klon.querySelector(".model").textContent = bike.model;
-          klon.querySelector(".kort").textContent = bike.kort;
+              const klon = temp.cloneNode(true).content;
 
-          if (bike.ny_pris == "") {
-              klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
-              klon.querySelector(".gammel_pris").style.textDecoration = "none";
-              klon.querySelector(".gammel_pris").style.color = "black";
-          } else {
-              klon.querySelector(".gammel_pris").style.fontWeight = "100";
-              klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
-              klon.querySelector(".ny_pris").textContent = bike.ny_pris + " DKK";
+              klon.querySelector(".bike_img").src = bike.billede.guid;
+              klon.querySelector(".bike_img").alt = bike.alt_tag;
+              klon.querySelector(".model").textContent = bike.model;
+              klon.querySelector(".kort").textContent = bike.kort;
+
+              if (bike.ny_pris == "") {
+                  klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
+                  klon.querySelector(".gammel_pris").style.textDecoration = "none";
+                  klon.querySelector(".gammel_pris").style.color = "black";
+              } else {
+                  klon.querySelector(".gammel_pris").style.fontWeight = "100";
+                  klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
+                  klon.querySelector(".ny_pris").textContent = bike.ny_pris + " DKK";
+              }
+
+              //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
+              //De bliver sendt videre med deres ID, som er defineret i JSON filen
+              klon.querySelector(".bike").addEventListener("click", () => {
+                  location.href = `cykel.html?id=${bike.id}`;
+              })
+
+              //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen
+              dest.appendChild(klon);
+
           }
-
-          //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
-          //De bliver sendt videre med deres ID, som er defineret i JSON filen
-          klon.querySelector(".bike").addEventListener("click", () => {
-              location.href = `cykel.html?id=${bike.id}`;
-          })
-
-          //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen
-          dest.appendChild(klon);
-
       })
       document.querySelector("#sorter").addEventListener("change", sorter);
+      document.querySelector("#kategori_sorter").addEventListener("change", sorter);
   }
 
   function search() {
@@ -102,6 +108,14 @@
           sortPriceDown();
       } else if (this.value === "priceUp") {
           sortPriceUp();
+      } else if (this.value === "oCity") {
+          sortCity();
+      } else if (this.value === "oRace") {
+          sortRace();
+      } else if (this.value === "oEl") {
+          sortEl();
+      } else if (this.value === "oTrek") {
+          sortTrek();
       }
   }
 
@@ -141,6 +155,38 @@
               return -1
           }
       })
+
+      showBikes();
+  }
+
+  function sortCity() {
+      console.log("sort city");
+
+      kategori = "City & Touring";
+
+      showBikes();
+  }
+
+  function sortRace() {
+      console.log("sort race");
+
+      kategori = "Race";
+
+      showBikes();
+  }
+
+  function sortEl() {
+      console.log("sort el");
+
+      kategori = "E-bike";
+
+      showBikes();
+  }
+
+  function sortTrek() {
+      console.log("sort trek");
+
+      kategori = "Trekking";
 
       showBikes();
   }
