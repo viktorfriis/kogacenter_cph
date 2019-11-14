@@ -1003,12 +1003,12 @@ textarea {
     margin-top: 0;
 }
 
-#kontakt_mail {
+.kontakt_links {
     color: var(--koga-blue);
     font-size: 1.6rem;
 }
 
-#kontakt_mail:hover {
+.kontakt_links:hover {
     text-decoration: underline;
 }
 
@@ -1021,6 +1021,16 @@ textarea {
     height: 30vh;
 }
 
+#sociale_medier {
+    display: flex;
+    margin: 5px 0;
+}
+
+#sociale_medier img {
+    width: 40px;
+    margin-right: 5px;
+}
+
 .footer_wrapper {
     display: grid;
     background-color: white;
@@ -1028,7 +1038,11 @@ textarea {
     position: relative;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
-    padding: 30px 0px 30px 70px;
+    max-width: 350px;
+}
+
+footer {
+    background-color: white;
 }
 
 footer a:hover {
@@ -1327,6 +1341,7 @@ footer p {
         margin: 0 auto;
         justify-items: center;
         padding: 30px;
+        max-width: 1200px;
     }
 
     /***FOOTER SLUT***/
