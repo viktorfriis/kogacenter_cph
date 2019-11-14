@@ -8,7 +8,7 @@
 
 body {
     margin: 0;
-    background-color: rgba(191, 191, 191, 0.22);
+    background-color: #f0f0f0;
 }
 
 html {
@@ -1070,7 +1070,7 @@ footer p {
     }
 
     #cykel_body {
-        background-color: rgba(191, 191, 191, 0.22);
+        background-color: #f0f0f0;
     }
 
     .bikes {
