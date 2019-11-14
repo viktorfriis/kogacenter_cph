@@ -1021,18 +1021,19 @@ textarea {
     height: 30vh;
 }
 
-#sociale_medier {
-    display: flex;
-    margin: 5px 0;
-}
-
-#sociale_medier img {
-    width: 40px;
+footer img {
+    width: 25px;
     margin-right: 5px;
+    margin-top: 5px;
+    transition: 0.5s ease all;
 }
 
 #sociale_medier a:hover {
     background-color: transparent;
+}
+
+#sociale_medier img:hover {
+    transform: scale(1.07);
 }
 
 .footer_wrapper {
@@ -1043,6 +1044,7 @@ textarea {
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
     max-width: 350px;
+    margin-bottom: 30px;
 }
 
 footer {
@@ -1346,6 +1348,11 @@ footer p {
         justify-items: center;
         padding: 30px;
         max-width: 1200px;
+    }
+
+    footer img {
+        width: 30px;
+        margin-top: 6px;
     }
 
     /***FOOTER SLUT***/
