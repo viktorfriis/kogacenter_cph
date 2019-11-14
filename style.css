@@ -420,6 +420,16 @@ h2 {
     font-weight: 600;
 }
 
+#quote a {
+    text-align: right;
+    font-family: 'Montserrat';
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 200;
+    font-size: 1.9rem;
+    color: rgba(0, 0, 0, 0.32);
+}
+
 .citatejer {
     text-align: right;
     font-family: 'Montserrat';
@@ -1355,12 +1365,8 @@ footer p {
 
     }
 
-    #quote {
-        text-align: center;
-    }
-
     .citatejer {
-        margin-right: 18%;
+        margin-right: 2.8%;
     }
 
     #sorter_wrap {
