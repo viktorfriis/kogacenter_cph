@@ -1,6 +1,8 @@
 //Definerer variablen hvor alle vores posts kommer ind i et array
 let bikes = [];
 
+let trekBikes = [];
+
 let imgCount = 0;
 
 //Definerer destinationen hvor hver article skal sættes ind
@@ -27,43 +29,44 @@ async function getJson() {
     //Indsætter dataen i mit array
     bikes = await jsonData.json();
 
-    console.log(bikes);
+    trekBikes = bikes.filter(trekBike => trekBike.kategori == "Trekking");
+
+    console.log(trekBikes);
     showBikes();
 }
 
 function showBikes() {
-    console.log("SHOWBIKES");
+    console.log("showBikes");
     dest.innerHTML = "";
     //For hvert array objekt skriver jeg dataen ind i en template
-    bikes.forEach(bike => {
-        if (bike.kategori == "Trekking") {
-            const klon = temp.cloneNode(true).content;
+    trekBikes.forEach(trekBike => {
+        const klon = temp.cloneNode(true).content;
 
-            klon.querySelector(".bike_img").src = bike.billede.guid;
-            klon.querySelector(".bike_img").alt = bike.alt_tag;
-            klon.querySelector(".model").textContent = bike.model;
-            klon.querySelector(".kort").textContent = bike.kort;
+        klon.querySelector(".bike_img").src = trekBike.billede.guid;
+        klon.querySelector(".bike_img").alt = trekBike.alt_tag;
+        klon.querySelector(".model").textContent = trekBike.model;
+        klon.querySelector(".kort").textContent = trekBike.kort;
 
-            if (bike.ny_pris == "") {
-                klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
-                klon.querySelector(".gammel_pris").style.textDecoration = "none";
-                klon.querySelector(".gammel_pris").style.color = "black";
-            } else {
-                klon.querySelector(".gammel_pris").style.fontWeight = "100";
-                klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
-                klon.querySelector(".ny_pris").textContent = bike.ny_pris + " DKK";
-            }
-
-
-            //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
-            //De bliver sendt videre med deres ID, som er defineret i JSON filen
-            klon.querySelector(".bike").addEventListener("click", () => {
-                location.href = `cykel.html?id=${bike.id}`;
-            })
-
-            //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen
-            dest.appendChild(klon);
+        if (trekBike.ny_pris == "") {
+            klon.querySelector(".gammel_pris").textContent = trekBike.pris + " DKK";
+            klon.querySelector(".gammel_pris").style.textDecoration = "none";
+            klon.querySelector(".gammel_pris").style.color = "black";
+        } else {
+            klon.querySelector(".gammel_pris").style.fontWeight = "100";
+            klon.querySelector(".gammel_pris").textContent = trekBike.pris + " DKK";
+            klon.querySelector(".ny_pris").textContent = trekBike.ny_pris + " DKK";
         }
+
+
+        //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
+        //De bliver sendt videre med deres ID, som er defineret i JSON filen
+        klon.querySelector(".bike").addEventListener("click", () => {
+            location.href = `cykel.html?id=${trekBike.id}`;
+        })
+
+        //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen
+        dest.appendChild(klon);
+
     })
 
     document.querySelector("#sorter").addEventListener("change", sorter);
@@ -77,16 +80,22 @@ function imgLoaded() {
     console.log("billede loaded");
     imgCount++;
 
-    if (imgCount == bikes.length) {
+    if (imgCount === trekBikes.length) {
         console.log("Alle billeder loaded");
         document.querySelectorAll(".loader").forEach(loader => {
-            loader.style.visibility = "hidden";
+            loader.style.display = "none";
         })
+
+    } else if (imgCount > trekBikes.length) {
+        document.querySelectorAll(".loader").forEach(loader => {
+            loader.style.display = "none";
+        })
+
     }
+
 }
 
 function sorter() {
-    console.log("sorter");
     searchBar.value = "";
     if (this.value === "alpha") {
         sortAlpha();
@@ -99,8 +108,7 @@ function sorter() {
 
 
 function sortAlpha() {
-    console.log("Sort alphabetically")
-    bikes.sort((a, b) => {
+    trekBikes.sort((a, b) => {
         if (a.model > b.model) {
             return 1
         } else {
@@ -112,8 +120,7 @@ function sortAlpha() {
 }
 
 function sortPriceDown() {
-    console.log("Sort price down");
-    bikes.sort((a, b) => {
+    trekBikes.sort((a, b) => {
         if (a.pris < b.pris) {
             return 1
         } else {
@@ -125,8 +132,7 @@ function sortPriceDown() {
 }
 
 function sortPriceUp() {
-    console.log("Sort price up");
-    bikes.sort((a, b) => {
+    trekBikes.sort((a, b) => {
         if (a.pris > b.pris) {
             return 1
         } else {

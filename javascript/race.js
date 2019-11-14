@@ -1,6 +1,8 @@
 //Definerer variablen hvor alle vores posts kommer ind i et array
 let bikes = [];
 
+let raceBikes = [];
+
 let imgCount = 0;
 
 //Definerer destinationen hvor hver article skal sættes ind
@@ -28,44 +30,45 @@ async function getJson() {
     //Indsætter dataen i mit array
     bikes = await jsonData.json();
 
+    raceBikes = bikes.filter(raceBike => raceBike.kategori == "Race");
+
     console.log(bikes);
     showBikes();
 }
 
 function showBikes() {
-    console.log("SHOWBIKES");
+    console.log("showBikes");
     dest.innerHTML = "";
     //For hvert array objekt skriver jeg dataen ind i en template
-    bikes.forEach(bike => {
-        if (bike.kategori == "Race") {
-            const klon = temp.cloneNode(true).content;
+    raceBikes.forEach(raceBike => {
+        const klon = temp.cloneNode(true).content;
 
-            klon.querySelector(".bike_img").src = bike.billede.guid;
-            klon.querySelector(".bike_img").alt = bike.alt_tag;
-            klon.querySelector(".model").textContent = bike.model;
-            klon.querySelector(".kort").textContent = bike.kort;
+        klon.querySelector(".bike_img").src = raceBike.billede.guid;
+        klon.querySelector(".bike_img").alt = raceBike.alt_tag;
+        klon.querySelector(".model").textContent = raceBike.model;
+        klon.querySelector(".kort").textContent = raceBike.kort;
 
-            if (bike.ny_pris == "") {
-                klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
-                klon.querySelector(".gammel_pris").style.textDecoration = "none";
-                klon.querySelector(".gammel_pris").style.color = "black";
-            } else {
-                klon.querySelector(".gammel_pris").style.fontWeight = "100";
-                klon.querySelector(".gammel_pris").textContent = bike.pris + " DKK";
-                klon.querySelector(".ny_pris").textContent = bike.ny_pris + " DKK";
-            }
-
-
-
-            //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
-            //De bliver sendt videre med deres ID, som er defineret i JSON filen
-            klon.querySelector(".bike").addEventListener("click", () => {
-                location.href = `cykel.html?id=${bike.id}`;
-            })
-
-            //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen
-            dest.appendChild(klon);
+        if (raceBike.ny_pris == "") {
+            klon.querySelector(".gammel_pris").textContent = raceBike.pris + " DKK";
+            klon.querySelector(".gammel_pris").style.textDecoration = "none";
+            klon.querySelector(".gammel_pris").style.color = "black";
+        } else {
+            klon.querySelector(".gammel_pris").style.fontWeight = "100";
+            klon.querySelector(".gammel_pris").textContent = raceBike.pris + " DKK";
+            klon.querySelector(".ny_pris").textContent = raceBike.ny_pris + " DKK";
         }
+
+
+
+        //Giver hver klon en eventlistener, så jeg kan klikke og åbne singleview på hver af dem
+        //De bliver sendt videre med deres ID, som er defineret i JSON filen
+        klon.querySelector(".bike").addEventListener("click", () => {
+            location.href = `cykel.html?id=${raceBike.id}`;
+        })
+
+        //Skriver klonen ud i destinationen, når den er udfyldt, og kører så loopet igen
+        dest.appendChild(klon);
+
     })
 
     document.querySelector("#sorter").addEventListener("change", sorter);
@@ -79,12 +82,19 @@ function imgLoaded() {
     console.log("billede loaded");
     imgCount++;
 
-    if (imgCount == bikes.length) {
+    if (imgCount === raceBikes.length) {
         console.log("Alle billeder loaded");
         document.querySelectorAll(".loader").forEach(loader => {
-            loader.style.visibility = "hidden";
+            loader.style.display = "none";
         })
+
+    } else if (imgCount > raceBikes.length) {
+        document.querySelectorAll(".loader").forEach(loader => {
+            loader.style.display = "none";
+        })
+
     }
+
 }
 
 function sorter() {
@@ -102,7 +112,7 @@ function sorter() {
 
 function sortAlpha() {
     console.log("Sort alphabetically")
-    bikes.sort((a, b) => {
+    raceBikes.sort((a, b) => {
         if (a.model > b.model) {
             return 1
         } else {
@@ -115,7 +125,7 @@ function sortAlpha() {
 
 function sortPriceDown() {
     console.log("Sort price down");
-    bikes.sort((a, b) => {
+    raceBikes.sort((a, b) => {
         if (a.pris < b.pris) {
             return 1
         } else {
@@ -128,7 +138,7 @@ function sortPriceDown() {
 
 function sortPriceUp() {
     console.log("Sort price up");
-    bikes.sort((a, b) => {
+    raceBikes.sort((a, b) => {
         if (a.pris > b.pris) {
             return 1
         } else {

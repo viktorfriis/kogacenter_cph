@@ -13,19 +13,6 @@ const temp = document.querySelector("template");
 
 document.addEventListener("DOMContentLoaded", start);
 
-
-function imgLoaded() {
-    console.log("billede loaded");
-    imgCount++;
-
-    if (imgCount == bikes.length) {
-        console.log("Alle billeder loaded");
-        document.querySelectorAll(".loader").forEach(loader => {
-            loader.style.visibility = "hidden";
-        })
-    }
-}
-
 function start() {
     getJson();
     search();
@@ -88,6 +75,25 @@ function showBikes() {
     document.querySelectorAll(".bike_img").forEach(billede => {
         billede.addEventListener("load", imgLoaded);
     })
+}
+
+function imgLoaded() {
+    console.log("billede loaded");
+    imgCount++;
+
+    if (imgCount === bikes.length) {
+        console.log("Alle billeder loaded");
+        document.querySelectorAll(".loader").forEach(loader => {
+            loader.style.display = "none";
+        })
+
+    } else if (imgCount > bikes.length) {
+        document.querySelectorAll(".loader").forEach(loader => {
+            loader.style.display = "none";
+        })
+
+    }
+
 }
 
 function sorter() {
