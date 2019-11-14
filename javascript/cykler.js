@@ -3,6 +3,8 @@ let bikes = [];
 
 let kategori = "alle";
 
+let imgCount = 0;
+
 //Definerer destinationen hvor hver article skal sættes ind
 const dest = document.querySelector(".bikes");
 
@@ -10,6 +12,19 @@ const dest = document.querySelector(".bikes");
 const temp = document.querySelector("template");
 
 document.addEventListener("DOMContentLoaded", start);
+
+
+function imgLoaded() {
+    console.log("billede loaded");
+    imgCount++;
+
+    if (imgCount == bikes.length) {
+        console.log("Alle billeder loaded");
+        document.querySelectorAll(".loader").forEach(loader => {
+            loader.style.visibility = "hidden";
+        })
+    }
+}
 
 function start() {
     getJson();
@@ -69,6 +84,10 @@ function showBikes() {
     })
     document.querySelector("#sorter").addEventListener("change", sorter);
     document.querySelector("#kategori_sorter").addEventListener("change", sorter);
+
+    document.querySelectorAll(".bike_img").forEach(billede => {
+        billede.addEventListener("load", imgLoaded);
+    })
 }
 
 function sorter() {

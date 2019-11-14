@@ -1,6 +1,8 @@
 //Definerer variablen hvor alle vores posts kommer ind i et array
 let bikes = [];
 
+let imgCount = 0;
+
 //Definerer destinationen hvor hver article skal sættes ind
 const dest = document.querySelector(".bikes");
 
@@ -67,6 +69,22 @@ function showBikes() {
     })
 
     document.querySelector("#sorter").addEventListener("change", sorter);
+
+    document.querySelectorAll(".bike_img").forEach(billede => {
+        billede.addEventListener("load", imgLoaded);
+    })
+}
+
+function imgLoaded() {
+    console.log("billede loaded");
+    imgCount++;
+
+    if (imgCount == bikes.length) {
+        console.log("Alle billeder loaded");
+        document.querySelectorAll(".loader").forEach(loader => {
+            loader.style.visibility = "hidden";
+        })
+    }
 }
 
 function sorter() {
