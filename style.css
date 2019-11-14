@@ -1071,6 +1071,10 @@ footer p {
         margin: 0 auto;
     }
 
+    .bike:hover {
+        transform: scale(1.03);
+    }
+
     .single_bike {
         max-width: 1000px;
         margin: 0 auto;
