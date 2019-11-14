@@ -8,7 +8,7 @@
 
 body {
     margin: 0;
-    background-color: rgba(191, 191, 191, 0.22);
+    background-color: #f0f0f0;
 }
 
 html {
@@ -1121,13 +1121,17 @@ footer p {
     }
 
     #cykel_body {
-        background-color: rgba(191, 191, 191, 0.22);
+        background-color: #f0f0f0;
     }
 
     .bikes {
         grid-template-columns: 1fr 1fr 1fr;
         max-width: 1000px;
         margin: 0 auto;
+    }
+
+    .bike:hover {
+        transform: scale(1.02);
     }
 
     .single_bike {
