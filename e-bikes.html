@@ -29,20 +29,23 @@
             <p>En E-Bike er en elektrisk cykel med pedalhjælp. Hjælpen aktiveres kun, når cykelpedalerne drejer. E-cykler er tilgængelige for alle aldre og til forskellige formål, fra lange cykelture til den daglige pendling til arbejde. Med en E-Bike kan du bevæge dig ubesværet og med stil.</p>
         </article>
         <article id="sorter_wrap">
-            <div>
+            <div class="filtrer_search">
                 <input id="search_bar" placeholder="Søg cykler her" type="text">
                 <div id="search_icon">
                     <img src="img/search.svg" alt="søge ikon">
                 </div>
             </div>
-            <div>
-                <p>Sorter efter: </p>
-                <select id="sorter">
+            <div class="filter">
+                <select id="sorter" class="sorter">
+                    <option id="sorter_efter" value="">Sorter efter</option>
                     <option value="">-</option>
                     <option id="alpha" value="alpha">Alfabetisk (A-Å)</option>
                     <option id="price_down" value="priceUp">Pris (lav-høj)</option>
                     <option id="price_up" value="priceDown">Pris (høj-lav)</option>
                 </select>
+                <div id="sort_icon">
+                    <img src="img/pil.svg" alt="pil ned ikon">
+                </div>
             </div>
         </article>
         <section class="bikes">

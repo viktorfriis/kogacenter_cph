@@ -33,24 +33,32 @@
                     <img src="img/search.svg" alt="søge ikon">
                 </div>
             </div>
-            <div class="filtrer">
-                <p>Sorter efter: </p>
-                <select id="sorter">
+            <div class="filter">
+                <select id="sorter" class="sorter">
+                    <option id="sorter_efter" value="">Sorter efter</option>
                     <option value="">-</option>
                     <option id="alpha" value="alpha">Alfabetisk (A-Å)</option>
                     <option id="price_down" value="priceUp">Pris (lav-høj)</option>
                     <option id="price_up" value="priceDown">Pris (høj-lav)</option>
                 </select>
-
-                <p>Cykel kategori: </p>
-                <select id="kategori_sorter">
+                <div id="sort_icon">
+                    <img src="img/pil.svg" alt="pil ned ikon">
+                </div>
+            </div>
+            <div class="filter">
+                <select id="kategori_sorter" class="sorter">
+                    <option value="alleKat">Alle kategorier</option>
                     <option value="">-</option>
                     <option id="option_city" value="oCity">City &amp; Touring</option>
                     <option id="option_race" value="oRace">Race</option>
                     <option id="option_e" value="oEl">El-cykler</option>
                     <option id="option_trek" value="oTrek">Trekking</option>
                 </select>
+                <div id="kategori_icon">
+                    <img src="img/pil.svg" alt="pil ned ikon">
+                </div>
             </div>
+
         </article>
         <section class="bikes">
         </section>

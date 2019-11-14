@@ -88,6 +88,8 @@ function sorter() {
         sortEl();
     } else if (this.value === "oTrek") {
         sortTrek();
+    } else if (this.value === "alleKat") {
+        sortAlle();
     }
 }
 
@@ -159,6 +161,14 @@ function sortTrek() {
     console.log("sort trek");
 
     kategori = "Trekking";
+
+    showBikes();
+}
+
+function sortAlle() {
+    console.log("sort trek");
+
+    kategori = "alle";
 
     showBikes();
 }

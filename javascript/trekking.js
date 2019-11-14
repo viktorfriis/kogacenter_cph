@@ -7,13 +7,10 @@ const dest = document.querySelector(".bikes");
 //Definerer templaten hvor som hver øl post skal følge
 const temp = document.querySelector("template");
 
-const searchBar = document.querySelector("#search_bar");
-
 document.addEventListener("DOMContentLoaded", start);
 
 function start() {
     getJson();
-    search();
 }
 
 

@@ -388,7 +388,7 @@ h2 {
 }
 
 #splash_content {
-    width: 500px;
+    width: 300px;
     position: absolute;
     left: 50px;
     top: 180px;
@@ -398,19 +398,20 @@ h2 {
     color: white;
     font-family: 'Oswald';
     font-weight: 600;
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin: 0;
     text-transform: uppercase;
     text-align: left;
     line-height: 1.2;
 }
 
-.forside_cta {
-    height: 70px;
+#forside_cta {
+    height: 60px;
+    width: 200px;
     float: left;
 }
 
-.forside_cta h3 {
+#forside_cta h3 {
     padding: 0px;
     font-size: 2rem;
     font-family: 'Oswald';
@@ -483,7 +484,6 @@ figcaption h3 {
     color: white;
 }
 
-
 #pop article.bike:hover {
     transform: scale(1.02);
 }
@@ -545,12 +545,13 @@ figcaption h3 {
 
 /***CYKLER I LISTE VISNING***/
 #sorter_wrap {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
     padding: 0 30px 30px;
     max-width: 1000px;
     margin: 0 auto;
+    justify-items: end;
 }
 
 #no_results {
@@ -561,27 +562,38 @@ figcaption h3 {
     margin-top: -30px;
 }
 
-.filtrer {
-    flex-basis: 300px;
-    flex-grow: 1;
-}
-
 .filtrer p {
     margin-right: 6px;
 }
 
 .filtrer_search {
-    flex-basis: 300px;
-    flex-grow: 1;
+    width: 100%;
+    max-width: 300px;
+    border: 1px white;
 }
 
-#sorter {
-    width: 27%;
-    margin-right: 5px;
+.sorter {
+    width: 500px;
+    border: none;
+    appearance: none;
+    background-color: white;
+    height: 40px;
+    margin: 0;
 }
 
 #kategori_sorter {
-    width: 27%;
+    width: 500px;
+    position: relative;
+}
+
+.filter p {
+    white-space: nowrap;
+    margin: 0;
+}
+
+.filter {
+    max-width: 300px;
+    position: relative;
 }
 
 
@@ -617,13 +629,50 @@ figcaption h3 {
     padding: 9px;
 }
 
+#sort_icon {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sort_icon img {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+}
+
+#kategori_icon {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#kategori_icon img {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+}
+
 .bikes {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 20px;
-    width: 90vw;
+    width: 100vw;
     margin: 0 auto;
     padding-bottom: 30px;
+    padding: 0 30px 30px 30px;
 }
 
 .bike {
@@ -1010,17 +1059,19 @@ footer p {
     #splash_content {
         left: 130px;
         top: 150px;
+        width: 500px;
     }
 
     #splash_content h1 {
         font-size: 5.5rem;
     }
 
-    .forside_cta {
+    #forside_cta {
         height: 70px;
+        width: 300px;
     }
 
-    .forside_cta h3 {
+    #forside_cta h3 {
         font-size: 2.5rem;
     }
 
@@ -1102,32 +1153,6 @@ footer p {
 
     .title hr {
         width: 35%;
-    }
-
-
-
-    .filtrer {
-        justify-content: space-between;
-        padding: 0;
-        flex-basis: 600px;
-    }
-
-    .filtrer_search {
-        flex-basis: 245px;
-    }
-
-    .filtrer p {
-        margin-left: 20px;
-        margin-right: 0px;
-
-    }
-
-    #sorter {
-        width: 30%;
-    }
-
-    #kategori_sorter {
-        width: 30%;
     }
 
 
@@ -1264,6 +1289,28 @@ footer p {
         margin-right: 18%;
     }
 
+    #sorter_wrap {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    .filtrer_search {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .filter {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    #sorter {
+        width: 100%;
+    }
+
+    #kategori_sorter {
+        width: 100%;
+    }
 
 
     /***FORSIDE SLUT***/
@@ -1290,7 +1337,13 @@ footer p {
     }
 
     #sorter_wrap {
+        padding: 0 0 30px 0;
+
+    }
+
+    .bikes {
         padding-left: 0;
+        padding-right: 0;
     }
 
     #no_results {
