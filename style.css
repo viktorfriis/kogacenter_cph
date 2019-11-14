@@ -1031,6 +1031,10 @@ textarea {
     margin-right: 5px;
 }
 
+#sociale_medier a:hover {
+    background-color: transparent;
+}
+
 .footer_wrapper {
     display: grid;
     background-color: white;
