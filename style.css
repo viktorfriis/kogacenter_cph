@@ -69,6 +69,20 @@ button h3 {
     color: white;
 }
 
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: 0.3s all;
+}
+
+.cta:hover {
+    background-color: #0b71b5;
+}
+
+.cta:active {
+    transform: scale(0.99);
+}
+
 .tab_closed h3 {
     color: black;
 }
@@ -1288,7 +1302,7 @@ footer p {
     #dropdown {
         width: 700px;
         position: absolute;
-        bottom: -159px;
+        bottom: -154px;
         right: -280px;
         z-index: 130;
         background-color: white;
