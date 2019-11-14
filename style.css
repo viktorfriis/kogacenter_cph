@@ -475,9 +475,7 @@ h2 {
     padding: 20px;
 }
 
-.bike figure {
-    position: relative;
-}
+
 
 #pop h1,
 #why h1 {
@@ -697,8 +695,13 @@ figcaption h3 {
     position: relative;
 }
 
+.bike figure {
+    position: relative;
+}
+
 .bike_img {
     width: 100%;
+    min-height: 170px;
 }
 
 .loader {
@@ -1222,6 +1225,10 @@ footer p {
         background-color: white;
     }
 
+    .bike_img {
+        min-height: 130px;
+    }
+
     #book {
         margin-right: 30px;
     }
@@ -1434,6 +1441,10 @@ footer p {
 
     #no_results {
         padding-left: 0;
+    }
+
+    .bike_img {
+        min-height: 180px;
     }
 
 }
