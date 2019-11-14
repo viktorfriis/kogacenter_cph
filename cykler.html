@@ -27,13 +27,13 @@
             <p>Alle Koga-cykler er håndbygget i vores lokaler i Heerenveen, Holland. En enkelt tekniker er ansvarlig for den fulde samling af hver cykel. Logoet 'håndbygget af Koga' på rammen er garantien for denne unikke arbejdspraksis. Af enkeltpersoner, for enkeltpersoner. Dette nære forhold til produktet afspejles i resultaterne: perfektion ned til den fineste detalje.</p>
         </article>
         <article id="sorter_wrap">
-            <div>
+            <div class="filtrer_search">
                 <input id="search_bar" placeholder="Søg cykler her" type="text">
                 <div id="search_icon">
                     <img src="img/search.svg" alt="søge ikon">
                 </div>
             </div>
-            <div>
+            <div class="filtrer">
                 <p>Sorter efter: </p>
                 <select id="sorter">
                     <option value="">-</option>
@@ -41,10 +41,20 @@
                     <option id="price_down" value="priceUp">Pris (lav-høj)</option>
                     <option id="price_up" value="priceDown">Pris (høj-lav)</option>
                 </select>
+
+                <p>Cykel kategori: </p>
+                <select id="kategori_sorter">
+                    <option value="">-</option>
+                    <option id="option_city" value="oCity">City &amp; Touring</option>
+                    <option id="option_race" value="oRace">Race</option>
+                    <option id="option_e" value="oEl">El-cykler</option>
+                    <option id="option_trek" value="oTrek">Trekking</option>
+                </select>
             </div>
         </article>
         <section class="bikes">
         </section>
+        <h3 id="no_results">Ingen resultater matchede din søgning.</h3>
     </main>
     <template>
         <article class="bike">
