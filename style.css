@@ -34,7 +34,8 @@ h2 {
 
 h3 {
     font-size: 1.8rem;
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
+    font-weight: 600;
 }
 
 p {
@@ -1044,10 +1045,7 @@ textarea {
 
 #faq h3 {
     margin-bottom: 5px;
-
     font-size: 1.6rem;
-    font-family: 'Montserrat';
-    font-weight: 600;
 }
 
 #faq p {
