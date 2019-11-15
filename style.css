@@ -75,6 +75,14 @@ button {
     transition: 0.3s all;
 }
 
+#back_btn {
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    cursor: pointer;
+    width: 40px;
+}
+
 .cta:hover {
     background-color: #0b71b5;
 }
@@ -799,6 +807,7 @@ figcaption h3 {
     width: 90vw;
     margin: 0 auto;
     background-color: white;
+    position: relative;
 }
 
 .s_bike_img {
@@ -1432,6 +1441,10 @@ footer p {
     }
 
     /***FOOTER SLUT***/
+
+    #back_btn {
+        left: 30px;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -1461,4 +1474,14 @@ footer p {
         min-height: 180px;
     }
 
+    #back_btn {
+        left: -45px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    #back_btn {
+        left: -65px;
+    }
 }
