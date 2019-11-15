@@ -532,19 +532,20 @@ figcaption h3 {
 
 #why {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     max-width: 1000px;
     margin: 0 auto;
     padding: 30px;
     grid-gap: 10px;
+    justify-items: center;
 }
 
 #why h1 {
-    grid-column: 1/4;
+    grid-column: 1/3;
 }
 
 #why hr {
-    grid-column: 1/4;
+    grid-column: 1/3;
     width: 50%;
     height: 2px;
 }
@@ -553,13 +554,14 @@ figcaption h3 {
     position: relative;
     text-align: center;
     color: white;
-    height: 100%;
+    overflow: hidden;
+    height: 40vw;
 }
 
 #why figcaption {
     position: absolute;
     text-align: center;
-    bottom: 0%;
+    bottom: 0;
     font-size: 1.8rem;
     font-family: 'Montserrat';
     font-weight: bold;
@@ -577,6 +579,93 @@ figcaption h3 {
 
 #why figure img {
     width: 100%;
+}
+
+.why_box {
+    width: 100%;
+    height: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    max-width: 300px;
+}
+
+.tint {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: 0.5s all;
+}
+
+.tint:hover {
+    background-color: rgba(14, 125, 199, 0.49);
+}
+
+#why_box_1 {
+    background-image: url(img/jonasarb2_blue.jpg);
+    background-size: cover;
+
+}
+
+#box_1 {
+    width: 100%;
+    text-align: right;
+    text-align: -webkit-right;
+}
+
+#why_box_2 {
+    background-image: url(img/service4_blue.jpg);
+    background-size: cover;
+    justify-self: start;
+}
+
+#box_2 {
+    text-align: left;
+    text-align: -webkit-left;
+    width: 100%;
+}
+
+
+#why_box_3 {
+    background-image: url(img/stel_blue.jpg);
+    background-size: cover;
+    justify-self: end;
+}
+
+#box_3 {
+    width: 100%;
+    text-align: right;
+    text-align: -webkit-right;
+}
+
+
+#why_box_4 {
+    background-image: url(img/sikring_blue.jpg);
+    background-size: cover;
+    justify-self: start;
+    background-position: 0 70%;
+}
+
+#box_4 {
+    width: 100%;
+    text-align: left;
+    text-align: -webkit-left;
+}
+
+
+#why h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 30px;
+    z-index: 300;
+    pointer-events: none;
 }
 
 /***FORSIDE SLUT***/
@@ -1162,6 +1251,18 @@ footer p {
 }
 
 /***FOOTER SLUT***/
+@media screen and (min-width: 700px) {
+    #why h4 {
+        font-size: 1.9rem;
+    }
+
+    .why_box {
+        height: 300px;
+    }
+
+    #why {}
+}
+
 
 @media screen and (min-width: 850px) {
     #splash_content {
@@ -1394,8 +1495,8 @@ footer p {
 
     #why h3 {
         font-size: 3rem;
-        margin-top: 350px;
-
+        margin-top: 280px;
+        height: 98.8%;
     }
 
     .citatejer {
@@ -1423,6 +1524,11 @@ footer p {
 
     #kategori_sorter {
         width: 100%;
+    }
+
+
+    #why h4 {
+        font-size: 2.4rem;
     }
 
 
@@ -1479,6 +1585,26 @@ footer p {
 
     #back_btn {
         left: -45px;
+    }
+
+    #why figure {
+        height: 450px;
+    }
+
+    #why h3 {
+        margin-top: 350px;
+    }
+
+    #why h1 {
+        grid-column: 1/5;
+    }
+
+    #why hr {
+        grid-column: 1/5;
+    }
+
+    #why {
+        grid-template-columns: 1fr 1fr 1fr 1fr
     }
 
 }
