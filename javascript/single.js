@@ -74,6 +74,10 @@
      document.querySelector(".book_link").href = "cykel.html?id=" + bike.id + "#booking";
 
      document.querySelector(".check_name").textContent = "KOGA " + bike.model;
+
+     document.querySelector("#back_btn").addEventListener("click", () => {
+         history.back();
+     })
  }
 
  function openTab() {
