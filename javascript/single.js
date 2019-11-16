@@ -78,7 +78,9 @@
      document.querySelector("#back_btn").addEventListener("click", () => {
          history.back();
      })
+
  }
+
 
  function openTab() {
      console.log("openTab");

@@ -75,28 +75,29 @@ function showBikes() {
 
 
     document.querySelectorAll(".bike_img").forEach(billede => {
-        billede.addEventListener("load", imgLoaded);
+        billede.addEventListener("load", () => {
+            imgCount++;
+            console.log("Antal billeder loadet: " + imgCount);
+            billede.style.zIndex = "10";
+
+            if (imgCount === bikes.length) {
+                console.log("Alle billeder loaded");
+                document.querySelectorAll(".loader").forEach(loader => {
+                    loader.style.display = "none";
+                })
+
+            } else if (imgCount > bikes.length) {
+                document.querySelectorAll(".loader").forEach(loader => {
+                    loader.style.display = "none";
+                })
+
+            }
+        });
+
+
     })
 }
 
-function imgLoaded() {
-    console.log("billede loaded");
-    imgCount++;
-
-    if (imgCount === eBikes.length) {
-        console.log("Alle billeder loaded");
-        document.querySelectorAll(".loader").forEach(loader => {
-            loader.style.display = "none";
-        })
-
-    } else if (imgCount > eBikes.length) {
-        document.querySelectorAll(".loader").forEach(loader => {
-            loader.style.display = "none";
-        })
-
-    }
-
-}
 
 function sorter() {
     console.log("sorter");
