@@ -75,10 +75,13 @@
 
      document.querySelector(".check_name").textContent = "KOGA " + bike.model;
 
+     document.querySelector(".s_bike_img").addEventListener("load", () => {
+         document.querySelector(".single_loader").style.display = "none";
+     })
+
      document.querySelector("#back_btn").addEventListener("click", () => {
          history.back();
      })
-
  }
 
 
