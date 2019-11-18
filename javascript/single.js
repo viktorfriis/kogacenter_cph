@@ -48,7 +48,7 @@
      document.querySelector(".s_bike_img").alt = bike.alt_tag;
      document.querySelector(".s_model").textContent = "KOGA " + bike.model;
      document.querySelector(".s_color").textContent = "Farve: " + bike.farve;
-     document.querySelector(".s_weight").textContent = "Vægt: " + bike.weight;
+     document.querySelector(".s_weight").textContent = "Vægt: " + bike.weight + " kg";
 
      if (bike.ny_pris == "") {
          document.querySelector(".s_pris").textContent = bike.pris + " DKK";
@@ -81,6 +81,24 @@
 
      document.querySelector("#back_btn").addEventListener("click", () => {
          history.back();
+     })
+
+     document.querySelector(".popup_img").src = bike.billede.guid;
+     document.querySelector(".popup_img").alt = bike.alt_tag;
+
+     const popup = document.querySelector(".popup");
+
+     document.querySelector(".s_bike_img").addEventListener("click", () => {
+         popup.style.display = "flex";
+         document.querySelector("#close_btn").addEventListener("click", () => {
+             popup.style.display = "none";
+         })
+
+         window.addEventListener("click", (event) => {
+             if (event.target == popup) {
+                 popup.style.display = "none";
+             }
+         })
      })
  }
 

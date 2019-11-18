@@ -368,7 +368,7 @@ h2 {
 
 #specs ul li {
     font-size: 1.6rem;
-    font-family: sans-serif;
+    font-family: 'Montserrat';
     color: white;
     line-height: 1.6;
 }
@@ -831,7 +831,6 @@ figcaption h3 {
 
 .s_bike_img {
     min-height: 250px;
-
 }
 
 .bike_img {
@@ -900,6 +899,37 @@ figcaption h3 {
     }
 }
 
+.popup {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    display: none;
+}
+
+.popup figure img {
+    width: 90vw;
+    max-width: 1000px;
+}
+
+.popup figure {
+    position: relative;
+}
+
+#close_btn {
+    width: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}
+
 .model {
     color: black;
 }
@@ -929,6 +959,7 @@ figcaption h3 {
 /***CYKLER I SINGLE VIEW***/
 #cykel_body {
     background-color: white;
+    position: relative;
 }
 
 .single_bike {
@@ -940,6 +971,7 @@ figcaption h3 {
 
 .s_bike_img {
     width: 100%;
+    cursor: url("img/magnifier.svg"), auto;
 }
 
 .s_pris {
@@ -1386,6 +1418,12 @@ footer p {
         background-color: white;
     }
 
+    #close_btn {
+
+        margin: 20px 20px 0 0;
+
+    }
+
     .bike_img {
         min-height: 130px;
     }
@@ -1647,5 +1685,11 @@ footer p {
 @media screen and (min-width: 1200px) {
     #back_btn {
         left: -65px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .s_bike_img {
+        min-height: inherit;
     }
 }
