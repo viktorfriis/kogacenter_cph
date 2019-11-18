@@ -135,6 +135,8 @@ article.bike {
 header {
     position: fixed;
     z-index: 400;
+    transition: top 0.3s;
+    top: 0;
 }
 
 .header_push {
@@ -415,9 +417,9 @@ h2 {
 
 #splash {
     width: 100vw;
-    height: 80vh;
+    height: 87vh;
     background-image: url(img/cykler1_sort1.jpg);
-    background-position: left;
+    background-position: 0% 25%;
     background-size: cover;
     position: relative;
 }
@@ -426,7 +428,7 @@ h2 {
     width: 300px;
     position: absolute;
     left: 50px;
-    top: 180px;
+    top: 255px;
 }
 
 #splash_content h1 {
@@ -1301,7 +1303,7 @@ footer p {
 @media screen and (min-width: 850px) {
     #splash_content {
         left: 130px;
-        top: 150px;
+        top: 225px;
         width: 500px;
     }
 
