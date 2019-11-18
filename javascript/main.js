@@ -19,16 +19,21 @@ async function hentHeader() {
     let theFetched = await theHeader.text();
     document.querySelector("header").innerHTML = theFetched;
 
+
+
     var prevScrollpos = window.pageYOffset;
 
     window.onscroll = function () {
-        var currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-            document.querySelector("header").style.top = "0";
-        } else {
-            document.querySelector("header").style.top = "-75px";
+        if (window.innerWidth > 850) {
+            console.log("større end 850");
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.querySelector("header").style.top = "0";
+            } else {
+                document.querySelector("header").style.top = "-75px";
+            }
+            prevScrollpos = currentScrollPos;
         }
-        prevScrollpos = currentScrollPos;
     }
 
     burgerAktiv();
@@ -70,30 +75,49 @@ function burgerAktiv() {
     })
 
     dropdownLink.addEventListener("mouseover", () => {
-        dropdown.style.display = "grid";
-        hoverEffect.style.display = "block";
+        if (window.innerWidth > 850) {
+            dropdown.style.display = "grid";
+            hoverEffect.style.display = "block";
+        } else {
+            dropdown.style.display = "block";
+            hoverEffect.style.display = "block";
+        }
     })
 
     dropdown.addEventListener("mouseover", () => {
-        dropdown.style.display = "grid";
-        dropdownLink.style.color = "#3b95d1";
-        hoverEffect.style.display = "block";
+        if (window.innerWidth > 850) {
+            dropdown.style.display = "grid";
+            dropdownLink.style.color = "#3b95d1";
+            hoverEffect.style.display = "block";
+        } else {
+            dropdown.style.display = "block";
+            hoverEffect.style.display = "block";
+        }
     })
 
     dropdownLink.addEventListener("mouseout", () => {
-        dropdown.style.display = "none";
-        hoverEffect.style.display = "none";
+        if (window.innerWidth > 850) {
+            dropdown.style.display = "none";
+            hoverEffect.style.display = "none";
+        } else {
+            dropdown.style.display = "none";
+            hoverEffect.style.display = "none";
+        }
     })
 
     dropdown.addEventListener("mouseout", () => {
-        dropdown.style.display = "none";
-        dropdownLink.style.color = "";
-        hoverEffect.style.display = "none";
+        if (window.innerWidth > 850) {
+            dropdown.style.display = "none";
+            dropdownLink.style.color = "";
+            hoverEffect.style.display = "none";
+        } else {
+            dropdown.style.display = "none";
+            hoverEffect.style.display = "none";
+        }
     })
 
     dropdownLink.addEventListener("click", () => {
-        dropdown.style.display = "grid";
-        hoverEffect.style.display = "block";
+        dropdown.style.display = "block";
     })
 
     if (page == "trekking" || page == "race" || page == "e-bikes" || page == "city") {
