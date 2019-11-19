@@ -285,7 +285,7 @@ nav {
 }
 
 #menu a {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-family: 'Oswald';
     letter-spacing: 1px;
     font-weight: 600;
@@ -314,12 +314,8 @@ nav {
     background-color: white;
     padding: 0;
     grid-template-columns: 1fr auto 1fr auto;
-    align-items: center;
-    justify-items: center;
     overflow: hidden;
     display: none;
-    border-top: 1px solid #3b95d1;
-    border-bottom: 1px solid #3b95d1;
 }
 
 #dropdown hr {
@@ -334,10 +330,11 @@ nav {
 }
 
 .dropdown_h2 {
-    color: black;
+    color: #3e3e3e;
     text-align: left;
     font-size: 1.6rem;
-    font-weight: 100;
+    font-weight: lighter;
+    margin-left: 43.3px;
 }
 
 #dropdown:hover {
