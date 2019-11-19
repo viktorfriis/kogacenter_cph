@@ -1506,9 +1506,15 @@ footer p {
         margin-right: 30px;
     }
 
+    .dropdown_h2 {
+        font-size: 1.8rem;
+        margin-left: 0;
+    }
+
     .drop_wrap {
         position: relative;
     }
+
 
     .drop_wrap a {
         padding-bottom: 20px;
