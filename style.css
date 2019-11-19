@@ -426,7 +426,7 @@ h2 {
 
 #splash {
     width: 100vw;
-    height: 87vh;
+    height: 75vh;
     background-image: url(img/cykler1_sort1.jpg);
     background-position: 0% 25%;
     background-size: cover;
@@ -437,7 +437,7 @@ h2 {
     width: 300px;
     position: absolute;
     left: 50px;
-    top: 255px;
+    top: 240px;
 }
 
 #splash_content h1 {
@@ -1335,6 +1335,16 @@ footer p {
 @media screen and (max-width: 450px) {
     .s_bike_img {
         min-height: inherit;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    #splash {
+        height: 87vh;
+    }
+
+    #splash_content {
+        top: 255px;
     }
 }
 
