@@ -116,9 +116,12 @@ function burgerAktiv() {
         }
     })
 
-    dropdownLink.addEventListener("click", () => {
-        dropdown.style.display = "block";
-    })
+    if (window.innerWidth < 850) {
+        dropdownLink.addEventListener("click", () => {
+            console.log("klik < 850");
+            dropdown.style.display = "block";
+        })
+    }
 
     if (page == "trekking" || page == "race" || page == "e-bikes" || page == "city") {
         dropdownLink.style.color = "#3b95d1";
